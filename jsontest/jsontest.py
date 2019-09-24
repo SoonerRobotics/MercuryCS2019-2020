@@ -2,7 +2,7 @@ import serial
 import json
 
 ser = serial.Serial()
-ser.baudrate = 38400
+ser.baudrate = 9600
 ser.port = "COM9"
 ser.open()
 
@@ -11,7 +11,6 @@ dataSend["led"] = True
 
 #ser.write(json.dumps(dataSend).encode("utf-8"))
 #dataRead = ser.readline().decode("utf-8")
-
 while True:
     cmd = input("LED on or off: ")
     if cmd == "on":
