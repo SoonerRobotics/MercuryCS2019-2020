@@ -9,14 +9,19 @@ StaticJsonDocument<200> doc;
 
 void setup() {
   // Initialize serial port
-  Serial.begin(9600);
+  Serial.begin(38400);
   Serial.setTimeout(50);
   pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
   while (!Serial) continue;
 
 }
 
 void loop() {
+  digitalWrite(5, HIGH);
+  digitalWrite(6, LOW);
   if (Serial.available()) {
     Serial.readBytesUntil('\n', json, 128);
     // Deserialize the JSON document
@@ -26,11 +31,12 @@ void loop() {
       // Turn on LED
       digitalWrite(LED_BUILTIN, HIGH);
     }
-    else {
+    else if (doc["led"] == false) {
       // Turn off LED
       digitalWrite(LED_BUILTIN, LOW);
     }
-  
+    analogWrite(3, 255.0 * abs((double)doc["leftStick"]));
+    
     serializeJson(doc, Serial);
     Serial.println();
   }
