@@ -1,7 +1,7 @@
 import cv2
 
 cv2.namedWindow("preview")
-vc = cv2.VideoCapture(1) #Set this to 1 in order to use the webcamera if you have one built in
+vc = cv2.VideoCapture(0) #Set this to 1 in order to use the webcamera if you have one built in
 
 # In theory, this is ideal, but it breaks the program:
 #vc.set(3, 320)
