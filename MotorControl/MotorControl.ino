@@ -14,8 +14,8 @@ void setup() {
   // Initialize serial port
   Serial.begin(38400);
   Serial.setTimeout(50);
-  motorLeft.begin(2,3,9);
-  motorRight.begin(4,5,10).reverse();
+  motorLeft.begin(8,9,5).reverse();
+  motorRight.begin(10,12,6).reverse();
   pinMode(LED_BUILTIN, OUTPUT);
   while (!Serial) continue;
 }
