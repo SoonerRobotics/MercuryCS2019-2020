@@ -14,6 +14,7 @@ void setup() {
   // Initialize serial port
   Serial.begin(38400);
   Serial.setTimeout(50);
+  // Set up motors on specified pins
   motorLeft.begin(8,9,5).reverse();
   motorRight.begin(10,12,6).reverse();
   pinMode(LED_BUILTIN, OUTPUT);
@@ -22,11 +23,13 @@ void setup() {
 
 void loop() {
   if (Serial.available()) {
+    // Read the JSON over serial
     Serial.readBytesUntil('\n', json, 128);
-    // Deserialize the JSON document
+    // Deserialize the JSON document so we can easily access its data
     deserializeJson(doc, json);
-
-    if (doc["led"]) {
+    
+    // Turn on/off built in LED based led status received
+    if (doc["led"] == true) {
       // Turn on LED
       digitalWrite(LED_BUILTIN, HIGH);
     }
@@ -34,9 +37,12 @@ void loop() {
       // Turn off LED
       digitalWrite(LED_BUILTIN, LOW);
     }
+    
+    // Set left and right motor speed based on controller stick values received
     motorLeft.output(doc["leftStick"]);
     motorRight.output(doc["rightStick"]);
-    
+
+    // Send the JSON back over serial
     serializeJson(doc, Serial);
     Serial.println();
   }
