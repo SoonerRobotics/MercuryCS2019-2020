@@ -1,4 +1,4 @@
-import pygame, sys, serial, json
+import pygame, sys, serial, json, os
 from time import sleep
 from enum import Enum
 
@@ -28,15 +28,17 @@ class XboxAxes(Enum):
     RX = 4
 
 #setup
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+pygame.display.init()
 pygame.init()
-window = pygame.display.set_mode((200, 200))
-pygame.display.set_caption("Xbox Controller Testing")
+#window = pygame.display.set_mode((200, 200))
+#pygame.display.set_caption("Xbox Controller Testing")
 joystick = pygame.joystick.Joystick(0)
 joystick.init()
 
 ser = serial.Serial(timeout = 1) # Set timeout to 1 second
 ser.baudrate = 38400
-ser.port = "COM9" # TODO: figure out how to find the port Arduino is connected to automatically
+ser.port = "/dev/ttyUSB0" # TODO: figure out how to find the port Arduino is connected to automatically
 ser.open()
 
 dataSend = {}
@@ -69,7 +71,7 @@ while (not done):
     # Read y-positions of left and right sticks
     dataSend["leftStick"] = joystick.get_axis(1)
     dataSend["rightStick"] = joystick.get_axis(3)
-    
+
     # If y-pos of sticks are in "dead zone", round them to 0
     if abs(dataSend["leftStick"]) < DEAD_ZONE_Y:
         dataSend["leftStick"] = 0
