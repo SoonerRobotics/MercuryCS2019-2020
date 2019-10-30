@@ -50,7 +50,8 @@ while (not done):
     for event in pygame.event.get(): # User did something.
         if event.type == pygame.QUIT: # If user clicked close.
             done = True # Flag that we are done so we exit this loop.
-    ''' For debugging: prints pressed button(s)
+    '''
+    For debugging: prints pressed button(s)
         elif event.type == pygame.JOYBUTTONDOWN:
             print("Joystick button pressed.")
         elif event.type == pygame.JOYBUTTONUP:
@@ -77,17 +78,17 @@ while (not done):
         dataSend["leftStick"] = 0
     if abs(dataSend["rightStick"]) < DEAD_ZONE_Y:
         dataSend["rightStick"] = 0
+    tcp_client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
         # Establish connection to TCP server and exchange data
         tcp_client.connect((host_ip, server_port))
-        tcp_client.sendall(dataSend.encode())
+        tcp_client.sendall(json.dumps(dataSend).encode())
 
         # Read data from the TCP server and close the connection
         received = tcp_client.recv(1024)
     finally:
         tcp_client.close()
 
-print ("Bytes Sent:     {}".format(data))
-print ("Bytes Received: {}".format(received.decode()))
-
+    print ("Bytes Sent:     {}".format(dataSend))
+    print ("Bytes Received: {}".format(received.decode()))
 pygame.quit()
