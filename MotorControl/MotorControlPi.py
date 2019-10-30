@@ -29,7 +29,7 @@ if __name__ == "__main__":
     # Activate the TCP server.
     # To abort the TCP server, press Ctrl-C.
     tcp_server.serve_forever()
-    
+'''
 ser = serial.Serial(timeout = 1) # Set timeout to 1 second
 ser.baudrate = 38400
 ser.port = "/dev/ttyUSB0" # TODO: figure out how to find the port Arduino is connected to automatically
@@ -50,3 +50,4 @@ except json.decoder.JSONDecodeError:
     print("Error reading from Arduino")
 
 pygame.quit()
+'''
