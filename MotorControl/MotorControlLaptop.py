@@ -30,8 +30,8 @@ class XboxAxes(Enum):
     LY = 0
     LX = 1
     T = 2 #Analog triggers, right side negative - result is sum of them (-1, 1)
-    RX = 3
-    RY = 4
+    RY = 3
+    RX = 4
 
 #setup
 pygame.display.init()
@@ -71,7 +71,7 @@ while (not done):
 
     # Read y-positions of left and right sticks
     dataSend["leftStick"] = joystick.get_axis(1)
-    dataSend["rightStick"] = joystick.get_axis(4)
+    dataSend["rightStick"] = joystick.get_axis(3)
 
     # If y-pos of sticks are in "dead zone", round them to 0
     if abs(dataSend["leftStick"]) < DEAD_ZONE_Y:
