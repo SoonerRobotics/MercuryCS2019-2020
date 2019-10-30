@@ -24,11 +24,10 @@ class XboxAxes(Enum):
     LY = 0
     LX = 1
     T = 2 #Analog triggers, right side negative - result is sum of them (-1, 1)
-    RY = 3
-    RX = 4
+    RX = 3
+    RY = 4
 
 #setup
-os.environ["SDL_VIDEODRIVER"] = "dummy"
 pygame.display.init()
 pygame.init()
 #window = pygame.display.set_mode((200, 200))
@@ -43,8 +42,8 @@ ser.open()
 
 dataSend = {}
 dataSend["led"] = True
-dataSend["leftStick"] = 0.0 
-dataSend["rightStick"] = 0.0 
+dataSend["leftStick"] = 0.0
+dataSend["rightStick"] = 0.0
 done = False
 while (not done):
     for event in pygame.event.get(): # User did something.
@@ -70,7 +69,7 @@ while (not done):
 
     # Read y-positions of left and right sticks
     dataSend["leftStick"] = joystick.get_axis(1)
-    dataSend["rightStick"] = joystick.get_axis(3)
+    dataSend["rightStick"] = joystick.get_axis(4)
 
     # If y-pos of sticks are in "dead zone", round them to 0
     if abs(dataSend["leftStick"]) < DEAD_ZONE_Y:
