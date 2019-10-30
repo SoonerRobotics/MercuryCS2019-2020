@@ -15,10 +15,10 @@ class Handler_TCPServer(socketserver.BaseRequestHandler):
     def handle(self):
         # self.request - TCP socket connected to the client
         self.data = self.request.recv(1024).strip()
-        print("{} sent:".format(self.client_address[0]))
+        #print("{} sent:".format(self.client_address[0]))
         print(self.data)
         # Send data to Arduino
-        ser.write(json.dumps(dataSend).encode("utf-8"))
+        ser.write(self.data)
         # Read data from Arduino
         dataRead = ser.readline().decode("utf-8")
         # Make sure read data is valid JSON
@@ -40,8 +40,8 @@ dataSend["leftStick"] = 0.0
 dataSend["rightStick"] = 0.0
 
 if __name__ == "__main__":
-    HOST, PORT = "localhost", 9999
-
+    HOST, PORT = "192.168.1.44", 9999
+    socketserver.TCPServer.allow_reuse_address = True
     # Init the TCP server object, bind it to the localhost on 9999 port
     tcp_server = socketserver.TCPServer((HOST, PORT), Handler_TCPServer)
 
