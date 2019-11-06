@@ -15,29 +15,23 @@ class Handler_TCPServer(socketserver.BaseRequestHandler):
     def handle(self):
         # self.request - TCP socket connected to the client
         self.data = self.request.recv(1024).strip()
-        #print("{} sent:".format(self.client_address[0]))
-        print(self.data)
         # Send data to Arduino
         ser.write(self.data)
         # Read data from Arduino
-        dataRead = ser.readline().decode("utf-8")
+        dataRead = ser.readline()
         # Make sure read data is valid JSON
         try:
-            print(json.loads(dataRead))
+            # Print data read from Arduino
+            print(json.loads(dataRead.decode("utf-8")))
         except json.decoder.JSONDecodeError:
             print("Error reading from Arduino")
-        # just send back ACK for data arrival confirmation
-        self.request.sendall("ACK from TCP Server".encode())
+        # Send data from Arduino to client
+        self.request.sendall(dataRead)
 
 ser = serial.Serial(timeout = 1) # Set timeout to 1 second
 ser.baudrate = 38400
-ser.port = "/dev/ttyUSB0" # TODO: figure out how to find the port Arduino is connected to automatically
+ser.port = "/dev/ttyUSB1" # TODO: figure out how to find the port Arduino is connected to automatically
 ser.open()
-
-dataSend = {}
-dataSend["led"] = True
-dataSend["leftStick"] = 0.0
-dataSend["rightStick"] = 0.0
 
 if __name__ == "__main__":
     HOST, PORT = "192.168.1.44", 9999
