@@ -10,19 +10,23 @@ dataRead = "Client start".encode()
 
 udp_client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 while True:
-    # TODO: do we need to use try?
+    # Try loop to prevent horrible issues should errors get thrown
     try:
         # Send data to UDP Server
         udp_client.sendto(dataRead, (host_ip, server_port))
         # Read data from the UDP server
         received = udp_client.recv(1024)
-        # Send data read from server to Arduino
-        ser.write(received)
         # Print data received from server
         print(received.decode())
+        
+        # Send data read from server to Arduino
+        ser.write(received)
         # Read from Arduino
         dataRead = ser.readline()
     finally:
+        pass
+        
+''' Weird stuff; maybe delete if not necessary        
 <<<<<<< HEAD
         pass
 =======
