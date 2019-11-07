@@ -1,4 +1,4 @@
-import sys, serial, json, socket, cv2
+import sys, serial, json, socket, cv2, datetime, time
 host_ip, server_port = "192.168.1.52", 9999
 
 ser = serial.Serial(timeout = 1) # Set serial timeout to 1 second
@@ -15,7 +15,7 @@ if vc.isOpened():
 else:
     rval = False
 
-data = "Client start. Camera: " + str(rval)
+data = str(datetime.datetime.now().time()) + ": Client start. Camera: " + str(rval)
 
 dataRead = data.encode()
 
@@ -28,7 +28,7 @@ height = int(height)
 
 oldDimensions = (width, height) #For upscaling after downscaling, so that the size of the image appears constant
 
-scale_percent = 25 #Modify this to change the quality of the image, 100 equals no change
+scale_percent = 20 #Modify this to change the quality of the image, 100 equals no change
 width = width * scale_percent / 100
 height = height * scale_percent / 100
 
@@ -42,16 +42,24 @@ downscale = cv2.resize(frame, newDimensions, interpolation = cv2.INTER_AREA)
 resized = cv2.resize(downscale, oldDimensions, interpolation = cv2.INTER_AREA)
 
 #Changing image color
-gray = cv2.cvtColor(resized, cv2.COLOR_BGR2GRAY)
+gray = cv2.cvtColor(downscale, cv2.COLOR_BGR2GRAY)
 
 img_str = cv2.imencode('.jpg', gray)[1].tostring()
 
-udp_client.sendto(dataRead, (host_ip, server_port))
-# udp_client.sendto(img_str, (host_ip, server_port))
-print(sys.getsizeof(img_str))
+#udp_client.sendto(dataRead, (host_ip, server_port))
+print(len(img_str))
+udp_client.sendto(img_str, (host_ip, server_port))
+#udp_client.sendto(dataRead, (host_ip, server_port))
+
 while True:
     # Try loop to prevent horrible issues should errors get thrown
+    rval, frame = vc.read()
+    downscale = cv2.resize(frame, newDimensions, interpolation = cv2.INTER_AREA)
+    gray = cv2.cvtColor(downscale, cv2.COLOR_BGR2GRAY)
+    rval, img_str = cv2.imencode('.jpg', gray)
+    udp_client.sendto(img_str, (host_ip, server_port))
     try:
+        time.sleep(0.1)
         # Send data to UDP Server
         # udp_client.sendto(dataRead, (host_ip, server_port))
         # Read data from the UDP server
