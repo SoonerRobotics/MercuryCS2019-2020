@@ -8,15 +8,12 @@ ser.open()
 
 udp_client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-cv2.namedWindow("preview")
 vc = cv2.VideoCapture(0) #Set this to 1 in order to use the webcamera if you have one built in
 
 if vc.isOpened():
     rval, frame = vc.read()
 else:
     rval = False
-
-cv2.destroyWindow("preview")
 
 data = "Client start. Camera: " + str(rval)
 
@@ -32,17 +29,9 @@ while True:
         received = udp_client.recv(1024)
         # Print data received from server
         print(received.decode())
-        
         # Send data read from server to Arduino
         ser.write(received)
         # Read from Arduino
         dataRead = ser.readline()
     finally:
         pass
-        
-''' Weird stuff; maybe delete if not necessary        
-<<<<<<< HEAD
-        pass
-=======
-        tcp_client.close()
->>>>>>> 428bad6c7cd443bb16b1b3f259b79229b9ae4161'''
