@@ -18,7 +18,33 @@ else:
 data = "Client start. Camera: " + str(rval)
 
 dataRead = data.encode()
-img_str = cv2.imencode('.jpg', frame)[1].tostring()
+
+#Retrieving the properties for the frame size
+width = vc.get(3)   # float
+height = vc.get(4) # float
+
+width = int(width)
+height = int(height)
+
+oldDimensions = (width, height) #For upscaling after downscaling, so that the size of the image appears constant
+
+scale_percent = 25 #Modify this to change the quality of the image, 100 equals no change
+width = width * scale_percent / 100
+height = height * scale_percent / 100
+
+width = int(width)
+height = int(height)
+
+newDimensions = (width, height)
+
+#Changing image quality
+downscale = cv2.resize(frame, newDimensions, interpolation = cv2.INTER_AREA)
+resized = cv2.resize(downscale, oldDimensions, interpolation = cv2.INTER_AREA)
+
+#Changing image color
+gray = cv2.cvtColor(resized, cv2.COLOR_BGR2GRAY)
+
+img_str = cv2.imencode('.jpg', gray)[1].tostring()
 
 udp_client.sendto(dataRead, (host_ip, server_port))
 # udp_client.sendto(img_str, (host_ip, server_port))
