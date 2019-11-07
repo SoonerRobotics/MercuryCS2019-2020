@@ -18,13 +18,16 @@ else:
 data = "Client start. Camera: " + str(rval)
 
 dataRead = data.encode()
+img_str = cv2.imencode('.jpg', frame)[1].tostring()
 
-
+udp_client.sendto(dataRead, (host_ip, server_port))
+# udp_client.sendto(img_str, (host_ip, server_port))
+print(sys.getsizeof(img_str))
 while True:
     # Try loop to prevent horrible issues should errors get thrown
     try:
         # Send data to UDP Server
-        udp_client.sendto(dataRead, (host_ip, server_port))
+        # udp_client.sendto(dataRead, (host_ip, server_port))
         # Read data from the UDP server
         received = udp_client.recv(1024)
         # Print data received from server
