@@ -44,7 +44,7 @@ resized = cv2.resize(downscale, oldDimensions, interpolation = cv2.INTER_AREA)
 #Changing image color
 gray = cv2.cvtColor(downscale, cv2.COLOR_BGR2GRAY)
 
-img_str = cv2.imencode('.jpg', gray)[1].tostring()
+img_str = cv2.imencode('.jpg', gray)[1]
 
 #udp_client.sendto(dataRead, (host_ip, server_port))
 print(len(img_str))
@@ -52,14 +52,18 @@ udp_client.sendto(img_str, (host_ip, server_port))
 #udp_client.sendto(dataRead, (host_ip, server_port))
 
 while True:
-    # Try loop to prevent horrible issues should errors get thrown
+    # Get frame
     rval, frame = vc.read()
+    # Downscale to reduce size
     downscale = cv2.resize(frame, newDimensions, interpolation = cv2.INTER_AREA)
+    # Make image grayscale to reduce size
     gray = cv2.cvtColor(downscale, cv2.COLOR_BGR2GRAY)
-    rval, img_str = cv2.imencode('.jpg', gray)
-    udp_client.sendto(img_str, (host_ip, server_port))
+    # Encode frame
+    rval, encodedFrame = cv2.imencode('.jpg', gray)
+    # Send encode frame to UDP server
+    udp_client.sendto(encodedFrame, (host_ip, server_port))
+    # Try loop to prevent horrible issues should errors get thrown
     try:
-        time.sleep(0.1)
         # Send data to UDP Server
         # udp_client.sendto(dataRead, (host_ip, server_port))
         # Read data from the UDP server
