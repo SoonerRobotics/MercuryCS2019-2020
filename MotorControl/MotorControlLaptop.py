@@ -1,4 +1,5 @@
-import pygame, sys, serial, json, socketserver
+import pygame, sys, serial, json, socketserver, cv2
+import numpy as np
 # Dead zone for y-axis
 DEAD_ZONE_Y = 0.1
 
@@ -16,8 +17,14 @@ dataSend["rightStick"] = 0.0
 
 class Handler_UDPServer(socketserver.BaseRequestHandler):
     def handle(self):
+        # Receive data from UDP client
         self.data = self.request[0].strip() ##remove leading and ending whitespace
-        print(self.data.decode())
+        #print(self.data.decode())
+        nparr = np.frombuffer(self.data, np.uint8)
+        frameReceived = cv2.imdecode(nparr, cv2.IMREAD_UNCHANGED)
+        frameReceived = cv2.resize(frameReceived, (320, 240), interpolation = cv2.INTER_AREA)
+        cv2.namedWindow("preview")
+        cv2.imshow("preview", frameReceived)
         # Get button/joystick values
         pygame.event.get()
         # Turn on LED if A is pressed   
