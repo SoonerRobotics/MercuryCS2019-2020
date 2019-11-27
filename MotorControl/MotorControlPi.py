@@ -1,4 +1,5 @@
-import sys, serial, json, socket, cv2, datetime, time
+import sys, serial, json, socket, datetime, time
+#import cv2
 host_ip, server_port = "192.168.1.52", 9999
 
 ser = serial.Serial(timeout = 1) # Set serial timeout to 1 second
@@ -7,7 +8,7 @@ ser.port = "/dev/ttyUSB0" # TODO: use try/catch to find the port Arduino is conn
 ser.open()
 
 udp_client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-
+'''
 vc = cv2.VideoCapture(0) #Set this to 1 in order to use the webcamera if you have one built in
 
 if vc.isOpened():
@@ -16,9 +17,9 @@ else:
     rval = False
 
 data = str(datetime.datetime.now().time()) + ": Client start. Camera: " + str(rval)
-
-dataRead = data.encode()
-
+'''
+# dataRead = data.encode()
+'''
 #Retrieving the properties for the frame size
 width = vc.get(3)   # float
 height = vc.get(4) # float
@@ -49,23 +50,26 @@ img_str = cv2.imencode('.jpg', gray)[1]
 #udp_client.sendto(dataRead, (host_ip, server_port))
 print(len(img_str))
 udp_client.sendto(img_str, (host_ip, server_port))
-#udp_client.sendto(dataRead, (host_ip, server_port))
+'''
+# udp_client.sendto(dataRead, (host_ip, server_port))
+
+dataRead = "".encode()
 
 while True:
     # Get frame
-    rval, frame = vc.read()
+    # rval, frame = vc.read()
     # Downscale to reduce size
-    downscale = cv2.resize(frame, newDimensions, interpolation = cv2.INTER_AREA)
+    # downscale = cv2.resize(frame, newDimensions, interpolation = cv2.INTER_AREA)
     # Make image grayscale to reduce size
-    gray = cv2.cvtColor(downscale, cv2.COLOR_BGR2GRAY)
+    # gray = cv2.cvtColor(downscale, cv2.COLOR_BGR2GRAY)
     # Encode frame
-    rval, encodedFrame = cv2.imencode('.jpg', gray)
+    # rval, encodedFrame = cv2.imencode('.jpg', gray)
     # Send encode frame to UDP server
-    udp_client.sendto(encodedFrame, (host_ip, server_port))
+    # udp_client.sendto(encodedFrame, (host_ip, server_port))
     # Try loop to prevent horrible issues should errors get thrown
     try:
         # Send data to UDP Server
-        # udp_client.sendto(dataRead, (host_ip, server_port))
+        udp_client.sendto(dataRead, (host_ip, server_port))
         # Read data from the UDP server
         received = udp_client.recv(1024)
         # Print data received from server
