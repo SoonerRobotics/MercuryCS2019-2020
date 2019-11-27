@@ -1,5 +1,7 @@
 #include <RobotLib.h>
 #include <ArduinoJson.h>
+// If we haven't received data for this many ms, we've probably lost connection
+const unsigned long CONNECTION_TIMEOUT = 200;
 char json[128];
 // Allocate the JSON document
 //
@@ -9,6 +11,8 @@ char json[128];
 StaticJsonDocument<200> doc;
 Motor motorLeft;
 Motor motorRight;
+unsigned long lastReceiveTime = 0;
+
 
 void setup() {
   // Initialize serial port
@@ -22,7 +26,9 @@ void setup() {
 }
 
 void loop() {
+  // If there is Serial data to be read
   if (Serial.available()) {
+    lastReceiveTime = millis();
     // Read the JSON over serial
     Serial.readBytesUntil('\n', json, 128);
     // Deserialize the JSON document so we can easily access its data
@@ -45,5 +51,14 @@ void loop() {
     // Send the JSON back over serial
     serializeJson(doc, Serial);
     Serial.println();
+  }
+  // If there is no Serial data to be read
+  else {
+    // If we have lost connection
+    if (millis() - lastReceiveTime > CONNECTION_TIMEOUT) {
+      // Stop motors
+      motorLeft.output(0);
+      motorRight.output(0);
+    }
   }
 }
