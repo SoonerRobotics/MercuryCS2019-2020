@@ -9,7 +9,7 @@
 
 Config documentation found [here](https://motion-project.github.io/motion_config.html) (although some options don't seem to work...)
 #### View camera stream
-1. Start camera
-2. Connect to SCR Wi-Fi (if you haven't already)
+1. Connect to SCR Wi-Fi (if you haven't already)
+2. Start camera
 3. Open CameraStream.html with your favorite web browser
 4. You should now see the video stream from the camera in your browser
