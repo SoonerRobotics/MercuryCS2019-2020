@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
-import threading
+import sys, serial, json, socket, threading, copy
 
-def main(receive_sensors=None, receive_nav=None, receive_controller=None):
-	
-	global data_dict, lock, control_dict, autonomous_signal
+def main(receive_sensors=None, receive_nav=None):
+    
+    global data_dict, lock, control_dict, autonomous_signal
 
     # Define data dict to be send
     data_dict = {
@@ -25,51 +25,68 @@ def main(receive_sensors=None, receive_nav=None, receive_controller=None):
     # Whether or not the bot listens to the nav or the controller
     autonomous_signal = False
 
-	def sensors_read(receive_queue=None):
-		global data_dict, lock
+    def sensors_read(receive_queue=None):
+        global data_dict, lock
 
-		while True:
+        while True:
 
-			if receive_queue is not None:
-				if not receive_queue.empty():
-					with lock:
-						data_dict = receive_queue.get()
+            if receive_queue is not None:
+                if not receive_queue.empty():
+                    received = receive_queue.get()
+                    with lock:
+                        data_dict = copy.deecopy(received)
 
-	def nav_read(receive_queue=None):
-		global control_dict, lock
+    def nav_read(receive_queue=None):
+        global control_dict, lock
 
-		while True:
+        while True:
 
-			if receive_queue is not None:
-				if not receive_queue.empty() and autonomous_signal:
-					with lock:
-						control_dict = receive_queue.get()
+            if receive_queue is not None:
+                if not receive_queue.empty() and autonomous_signal:
+                    received = receive_queue.get()
+                    with lock:
+                        control_dict = copy.deepcopy(received)
 
-	def controller_read(receive_queue=None):
-		global control_dict, lock
+    # Switch to udp client
+    def controller_read(receive_queue=None):
+        global control_dict, lock
 
-		while True:
+        # Define server ip, port, and client
+        host_ip, server_port = "192.168.1.52", 9999
+        udp_client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-			if receive_queue is not None:
-				if not receive_queue.empty() and not autonomous_signal:
-					with lock:
-						control_dict = receive_queue.get()
+        while True:
 
-	def motor_write():
-		global control_dict, lock
+            received = udp_client.recv(1024)
+            with lock:
+                control_dict = json.loads(received.decode())
 
-		ser = serial.Serial(timeout = 1) # Set serial timeout to 1 second
-		ser.baudrate = 38400
-		ser.port = "/dev/ttyUSB0" # TODO: use try/catch to find the port Arduino is connected to automatically
-		ser.open()
+    def motor_write():
+        global control_dict, lock
 
-		while True:
+        ser = serial.Serial(timeout = 1) # Set serial timeout to 1 second
+        ser.baudrate = 38400
+        ser.port = "/dev/ttyUSB0" # TODO: use try/catch to find the port Arduino is connected to automatically
+        ser.open()
 
-			with lock:
-				ser.write(json.dumps(control_dict).encode())
-				
+        while True:
 
-	threads = []
+            with lock:
+                send_dict = copy.deepcopy(control_dict)
+            ser.write(json.dumps(send_dict).encode())
+
+    def myput(queue, obj):
+        if queue.full():
+            while not queue.empty():
+                try:
+                    queue.get(block=False)
+                except Exception as e:
+                    print(f"Error: {e}")
+                finally:
+                    queue.put(obj)
+                
+
+    threads = []
     threads.append(threading.Thread(target=sensors_read, args=(receive_sensors,)))
     threads.append(threading.Thread(target=nav_read, args=(receive_nav,)))
     threads.append(threading.Thread(target=controller_read, args=(receive_controller,)))
@@ -85,4 +102,4 @@ def main(receive_sensors=None, receive_nav=None, receive_controller=None):
 
 
 if __name__ == "__main__":
-	main()
+    main()

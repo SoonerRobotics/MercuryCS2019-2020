@@ -1,3 +1,35 @@
+Relevant remaining software tasks in approximate priority (integrate into clickup on 1-28-20)
+---------------------------------------------------------------------------------------------
+General Track
+	• Modify nodes to use single slot deque for communication
+	Sensor Track
+		• Test VPN laptop-pi connection
+		• Finalize Arduino ultrasonic and video sensor code
+		• Integration test sensor_relay.py, ui.py, sensor_driver.ino
+	Motor Track
+		• Finalize Arduino wheel motor code
+		• Integration test collision_avoidance.py, controller_handler.py, and motor_driver.ino
+	• Integration test manual full stack
+Specialized Track
+	Autonomous Track
+		• Finalize navigation code for known section
+		• Integration test known autonomous full stack
+		• Finalize navigation code for unknown section
+		• Integration test unknown autonomous full stack
+	Arm Track
+		• Finalize Arduino arm motor code
+		• Integration test manual full stack
+	Magnetometer/Accelerometer Track
+		• Finalize Arduino magnetometer and accelerometer code
+		• Integration test manual full stack
+		• Overlay magnetometer compass on UI
+		• Integration test manual full stack
+	Networking Track
+		• Loss of Signal test (see rulebook)
+		• Use DCHP to obtain ports
+		• Ensure setup complies with all network rules laid out in rulebook
+
+
 Robot software layout
 ----------------------
 • Arduino 1
