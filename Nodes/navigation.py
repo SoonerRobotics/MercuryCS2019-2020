@@ -56,7 +56,7 @@ def main(receive_sensors=None, write_queues=[]):
 				continue
 
 	threads = []
-    threads.append(threading.Thread(target=sensors_read, args=(receive_sensors)))
+    threads.append(threading.Thread(target=sensors_read, args=(receive_sensors,)))
     threads.append(threading.Thread(target=queue_write, args=(write_queues,)))
     threads.append(threading.Thread(target=state_machine))
 

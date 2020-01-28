@@ -70,9 +70,9 @@ def main(receive_sensors=None, receive_nav=None, receive_controller=None):
 				
 
 	threads = []
-    threads.append(threading.Thread(target=sensors_read, args=(receive_sensors)))
-    threads.append(threading.Thread(target=nav_read, args=(receive_nav)))
-    threads.append(threading.Thread(target=controller_read, args=(receive_controller)))
+    threads.append(threading.Thread(target=sensors_read, args=(receive_sensors,)))
+    threads.append(threading.Thread(target=nav_read, args=(receive_nav,)))
+    threads.append(threading.Thread(target=controller_read, args=(receive_controller,)))
     threads.append(threading.Thread(target=motor_write))
 
     for i in range(len(threads)):
