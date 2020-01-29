@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Pi Video Surveillance</title>
+  </head>
+  <body>
+    <h1>Pi Video Surveillance</h1>
+    <img src="{{ url_for('video_feed') }}">
+    <p>Ultrasonic Front: <span id="us_front">Sensor data here</span></p>
+    <p>Ultrasonic Left: <span id="us_left">Sensor data here</span></p>
+    <p>Ultrasonic Right: <span id="us_right">Sensor data here</span></p>
+    <p>Accelerometer: <span id="a">Sensor data here</span></p>
+    <p>Magnetometer: <span id="m">Sensor data here</span></p>
+  </body>
+
+  <script>
+
+    setInterval(() => {
+        fetch("{{ url_for('sensor_feed') }}")
+        .then(response => {
+                response.json().then(j => {
+                    us_front.innerHTML = j.us_front;
+                    us_left.innerHTML = j.us_left;
+                    us_right.innerHTML = j.us_right;
+                    a.innerHTML = j.a;
+                    m.innerHTML = j.m;
+                })
+            });
+        }, 1000/100);
+
+  </script>
+
+</html>

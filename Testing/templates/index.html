@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Pi Video Surveillance</title>
+  </head>
+  <body>
+    <h1>Pi Video Surveillance</h1>
+    <img src="{{ url_for('video_feed') }}">
+    <p>Ultrasonic 1: <span id="us1">Sensor data here</span></p>
+    <p>Ultrasonic 2: <span id="us2">Sensor data here</span></p>
+    <p>Ultrasonic 3: <span id="us3">Sensor data here</span></p>
+    <p>Accelerometer: <span id="a">Sensor data here</span></p>
+    <p>Magnetometer: <span id="m">Sensor data here</span></p>
+  </body>
+
+  <script>
+
+    setInterval(() => {
+        fetch("{{ url_for('us1_feed') }}")
+        .then(response => {
+                response.text().then(t => {us1.innerHTML = t})
+            });
+        }, 1000/10);
+
+    setInterval(() => {
+        fetch("{{ url_for('us2_feed') }}")
+        .then(response => {
+                response.text().then(t => {us2.innerHTML = t})
+            });
+        }, 1000/10);
+
+    setInterval(() => {
+        fetch("{{ url_for('us3_feed') }}")
+        .then(response => {
+                response.text().then(t => {us3.innerHTML = t})
+            });
+        }, 1000/10);
+
+    setInterval(() => {
+        fetch("{{ url_for('a_feed') }}")
+        .then(response => {
+                response.text().then(t => {a.innerHTML = t})
+            });
+        }, 1000/10);
+
+    setInterval(() => {
+        fetch("{{ url_for('m_feed') }}")
+        .then(response => {
+                response.text().then(t => {m.innerHTML = t})
+            });
+        }, 1000/10);
+
+  </script>
+
+</html>
