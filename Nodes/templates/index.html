@@ -15,39 +15,17 @@
   <script>
 
     setInterval(() => {
-        fetch("{{ url_for('us_front_feed') }}")
+        fetch("{{ url_for('sensor_feed') }}")
         .then(response => {
-                response.text().then(t => {us_front.innerHTML = t})
+                response.json().then(j => {
+                    us_front.innerHTML = j.us_front;
+                    us_left.innerHTML = j.us_left;
+                    us_right.innerHTML = j.us_right;
+                    a.innerHTML = j.a;
+                    m.innerHTML = j.m;
+                })
             });
-        }, 1000/10);
-
-    setInterval(() => {
-        fetch("{{ url_for('us_left_feed') }}")
-        .then(response => {
-                response.text().then(t => {us_left.innerHTML = t})
-            });
-        }, 1000/10);
-
-    setInterval(() => {
-        fetch("{{ url_for('us_right_feed') }}")
-        .then(response => {
-                response.text().then(t => {us_right.innerHTML = t})
-            });
-        }, 1000/10);
-
-    setInterval(() => {
-        fetch("{{ url_for('a_feed') }}")
-        .then(response => {
-                response.text().then(t => {a.innerHTML = t})
-            });
-        }, 1000/10);
-
-    setInterval(() => {
-        fetch("{{ url_for('m_feed') }}")
-        .then(response => {
-                response.text().then(t => {m.innerHTML = t})
-            });
-        }, 1000/10);
+        }, 1000/100);
 
   </script>
 

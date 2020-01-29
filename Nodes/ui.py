@@ -10,7 +10,7 @@
 #   Input from sensors_threads.py
 
 # import the necessary packages
-import threading, datetime, imutils, time, random, copy, socketserver, json
+import threading, datetime, imutils, time, random, copy, socketserver, json, socket
 
 import numpy as np
 from flask import Response
@@ -53,27 +53,38 @@ def main(server=False):
 
             # Receive data from UDP client
             self.data = self.request[0].strip() ##remove leading and ending whitespace
+            #self.data = self.myreceive()
 
             # Decode data dictionary
-            data_dict = json.loads(self.data.decode())
+            data_dict = json.loads(self.data)
             if data_dict["frame"] is not None:
-                data_dict["frame"] = np.asarray(data_dict["frame"])
+                data_dict["frame"] = np.asarray(data_dict["frame"], dtype=np.uint8)
 
             # Write data dictionary with lock
             with lock:
                 for data_key in data_dict:
                     sensor_dict[data_key] = data_dict[data_key]
 
-        def myreceive(self):
+    class Handler_TCPServer(socketserver.StreamRequestHandler):
 
-            # Receive number of packets
-            n_packets = json.loads(self.request[0].strip().decode())["n_packets"]
+        def handle(self):
+            # Grab global vars
+            global sensor_dict, lock
 
-            message = bytes()
-            while n_packets > 0:
-                message.append(json.loads(self.request[0].strip().decode())["message"])
+            while True:
 
-            return message
+                # Receive data from UDP client
+                self.data = self.rfile.readline().strip() ##remove leading and ending whitespace
+
+                # Decode data dictionary
+                data_dict = json.loads(self.data)
+                if data_dict["frame"] is not None:
+                    data_dict["frame"] = np.asarray(data_dict["frame"], dtype=np.uint8)
+
+                # Write data dictionary with lock
+                with lock:
+                    for data_key in data_dict:
+                        sensor_dict[data_key] = data_dict[data_key]
 
     @app.route("/")
     def index():
@@ -91,16 +102,12 @@ def main(server=False):
         # Grabs all the sensor values
 
         # Host address and port number
-        HOST, PORT = "", 9999
+        HOST, PORT = "localhost", 9000
 
-        socketserver.UDPServer.allow_reuse_address = True
+        socketserver.TCPServer.allow_reuse_address = True
+        tcp_server = socketserver.TCPServer((HOST, PORT), Handler_TCPServer)
 
-        # Init the UDP server object, bind it to the localhost on 9999 port
-        udp_server = socketserver.UDPServer((HOST, PORT), Handler_UDPServer)
-
-        # Activate the UDP server.
-        # To abort the UDP server, press Ctrl-C.
-        udp_server.serve_forever()
+        tcp_server.serve_forever()
 
     def fetch_sensors():
         # Grabs all the sensor values
@@ -118,6 +125,8 @@ def main(server=False):
             "%A %d %B %Y %I:%M:%S%p"), (10, frame.shape[0] - 10),
             cv2.FONT_HERSHEY_SIMPLEX, 0.35, (0, 0, 255), 1)
 
+        flag, frame = cv2.imencode(".jpg", frame)
+
         # acquire the lock, set the sensor dictionary, and release the
         # lock
         with lock:
@@ -134,7 +143,6 @@ def main(server=False):
         # Slightly different from the other feed functions. Generates multipart response
 
         def generate():
-            print("Entering frame generator")
             # grab global references sensor dictionary and lock variables
             global sensor_dict, lock
          
@@ -147,13 +155,9 @@ def main(server=False):
                     if sensor_dict["frame"] is None:
                         continue
 
-                    # encode the frame in JPEG format
-                    (flag, encodedImage) = cv2.imencode(".jpg", sensor_dict["frame"])
-
-                    # ensure the frame was successfully encoded
-                    if not flag:
-                        continue
+                    encodedImage = copy.deepcopy(sensor_dict["frame"])
          
+                time.sleep(1/15)
                 # yield the output frame in the byte format
                 yield(b'--frame\r\n' b'Content-Type: image/jpeg\r\n\r\n' + 
                     bytearray(encodedImage) + b'\r\n')
@@ -163,110 +167,30 @@ def main(server=False):
         return Response(generate(),
             mimetype = "multipart/x-mixed-replace; boundary=frame")
 
-    @app.route("/us_front_feed", endpoint="us_front_feed")
-    def us_front_feed():
-        # Handles the ultrasonic 1 feed
+    @app.route("/sensor_feed", endpoint="sensor_feed")
+    def sensor_feed():
 
         # grab global references to the sensor dictionary and lock variables
         global sensor_dict, lock
 
         # wait until the lock is acquired
-        sensor = "No sensor read"
+        response_dict = {
+            "us_front": "No sensor read",
+            "us_left": "No sensor read",
+            "us_right": "No sensor read",
+            "a": "No sensor read",
+            "m": "No sensor read"
+        }        
         with lock:
             # check if the sensor is available, otherwise skip
             # the iteration of the loop
-            if sensor_dict["us_front"] is None:
-                return sensor
-
-            sensor = str(sensor_dict["us_front"])
-
-        # return the response generated along with the specific media
-        # type (mime type)
-        return Response(sensor, mimetype = "text")
-
-    @app.route("/us_left_feed", endpoint="us_left_feed")
-    def us_left_feed():
-        # Handles the ultrasonic 2 feed
-
-        # grab global references to the sensor dictionary and lock variables
-        global sensor_dict, lock
-
-        # wait until the lock is acquired
-        sensor = "No sensor read"
-        with lock:
-            # check if the sensor is available, otherwise skip
-            # the iteration of the loop
-            if sensor_dict["us_left"] is None:
-                return sensor
-
-            sensor = str(sensor_dict["us_left"])
+            for key in response_dict.keys():
+                if sensor_dict[key] is not None:
+                    response_dict[key] = str(sensor_dict[key])
 
         # return the response generated along with the specific media
         # type (mime type)
-        return Response(sensor, mimetype = "text")
-
-    @app.route("/us_right_feed", endpoint="us_right_feed")
-    def us_right_feed():
-        # Handles the ultrasonic 3 feed
-
-        # grab global references to the sensor dictionary and lock variables
-        global sensor_dict, lock
-
-        # wait until the lock is acquired
-        sensor = "No sensor read"
-        with lock:
-            # check if the sensor dictionary is available, otherwise skip
-            # the iteration of the loop
-            if sensor_dict["us_right"] is None:
-                return sensor
-
-            sensor = str(sensor_dict["us_right"])
-
-        # return the response generated along with the specific media
-        # type (mime type)
-        return Response(sensor, mimetype = "text")
-
-    @app.route("/a_feed", endpoint="a_feed")
-    def a_feed():
-        # Handles the accelerometer feed
-
-        # grab global references to the sensor dictionary and lock variables
-        global sensor_dict, lock
-
-        # wait until the lock is acquired
-        sensor = "No sensor read"
-        with lock:
-            # check if the sensor is available, otherwise skip
-            # the iteration of the loop
-            if sensor_dict["a"] is None:
-                return sensor
-
-            sensor = str(sensor_dict["a"])
-
-        # return the response generated along with the specific media
-        # type (mime type)
-        return Response(sensor, mimetype = "text")
-
-    @app.route("/m_feed", endpoint="m_feed")
-    def m_feed():
-        # Handles the magnetometer feed
-
-        # grab global references to the sensor dictionary and lock variables
-        global sensor_dict, lock
-
-        # wait until the lock is acquired
-        sensor = "No sensor read"
-        with lock:
-            # check if the sensor is available, otherwise skip
-            # the iteration of the loop
-            if sensor_dict["m"] is None:
-                return sensor
-
-            sensor = str(sensor_dict["m"])
-
-        # return the response generated along with the specific media
-        # type (mime type)
-        return Response(sensor, mimetype = "text")
+        return Response(json.dumps(response_dict), mimetype = "application/json")
 
     # start a thread that will update sensor dictionary to contain current values
     # Use fetch_sensors function as arg to simulate data. Otherwise, use fetch_sensors_server
