@@ -1,6 +1,7 @@
 #include <RobotLib.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BNO055.h>
+#include <Wire.h>
 
 Motor leftMotor;
 Motor rightMotor;
@@ -9,8 +10,7 @@ float turnPower;
 
 // BNO055
 Adafruit_BNO055 bno = Adafruit_BNO055(55);
-imu::Vector<3> euler, accel;
-sensors_event_t event;
+sensors_event_t orientationData;
 
 // Heading control
 PIDController yawController;
@@ -57,6 +57,8 @@ void setup() {
     }
 
     delay(1000);
+    // Set up the yaw PID controller
+    yawController.begin(0, 0.01,0.01, 0);
     leftMotor.begin(8,9,5).reverse();
     rightMotor.begin(10,12,6).reverse();
     // Initialize loop timer
@@ -65,12 +67,13 @@ void setup() {
 
 void loop() {
     // BNO055 sensor data
-    bno.getEvent(&event);
-    euler = bno.getVector(Adafruit_BNO055::VECTOR_EULER);
-    accel = bno.getVector(Adafruit_BNO055::VECTOR_ACCELEROMETER);
+    bno.getEvent(&orientationData, Adafruit_BNO055::VECTOR_EULER);
     // Achieve the current target heading by locking the IMU to the desired yaw
-    turnPower = yawController.update(0, angleDiff(constrainAngle(euler.x()), targetAngle));
-    Serial.println(euler.x());
+    turnPower = -yawController.update(0, angleDiff(constrainAngle(orientationData.orientation.x), targetAngle));
+    turnPower = RLUtil::clamp(turnPower, -1, 1);
+    Serial.print(orientationData.orientation.x);
+    Serial.print("     ");
+    Serial.println(turnPower);
     leftMotor.output(-1 * turnPower);
     rightMotor.output(turnPower);
 }
