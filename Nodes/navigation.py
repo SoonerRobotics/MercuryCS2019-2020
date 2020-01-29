@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
-import sys, serial, json, socket, threading, copy
+import sys, serial, json, socket, threading, copy, time
 
 def main(receive_sensors=None, write_queue=None):
     
     global data_dict, lock, state, control_dict
 
-    # Define data dict to be send
+    # Define data dict to be sent
     data_dict = {
         "frame": None,
         "us1": None,
@@ -17,7 +17,11 @@ def main(receive_sensors=None, write_queue=None):
     }
 
     # Define control dict to send
-    control_dict = {"null": "null"}
+    control_dict = {
+        "left_motor": 5,
+        "right_motor": 5,
+        "arm_motor": 5
+    }
 
     # Thread lock
     lock = threading.Lock()
@@ -35,9 +39,9 @@ def main(receive_sensors=None, write_queue=None):
             if receive_queue is not None:
                 if not receive_queue.empty():
                     received = receive_queue.get()
+                    print(f"Nav: val received {received}")
                     with lock:
                         data_dict = copy.deepcopy(received)
-
             else:
                 break
 
@@ -59,18 +63,15 @@ def main(receive_sensors=None, write_queue=None):
                 continue
 
     def myput(queue, obj):
-        if queue.full():
-            while not queue.empty():
-                try:
-                    queue.get(block=False)
-                except Exception as e:
-                    print(f"Error: {e}")
-                finally:
-                    queue.put(obj)
+
+        try:
+            queue.put_nowait(obj)
+        except Exception as e:
+            pass
 
     threads = []
     threads.append(threading.Thread(target=sensors_read, args=(receive_sensors,)))
-    threads.append(threading.Thread(target=queue_write, args=(write_queues,)))
+    threads.append(threading.Thread(target=queue_write, args=(write_queue,)))
     threads.append(threading.Thread(target=state_machine))
 
     for i in range(len(threads)):

@@ -98,9 +98,8 @@ def main(write_queue=None, picam=True, local_server=False):
             # Write data dict to queues
             # Put data dictionary into queue if queue isn't full
             if queue is not None:
-                if not queue.full():
-                    with lock:
-                        myput(queue, data_dict)
+                with lock:
+                    myput(queue, data_dict)
                             
             # Break if no queues
             else:
@@ -123,7 +122,7 @@ def main(write_queue=None, picam=True, local_server=False):
                 tcp_client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 tcp_client.connect((host_ip, server_port))
             except Exception as e:
-                print(f"Error: {e}")
+                #print(f"Error: {e}")
                 tcp_client = None
 
         while True:
@@ -139,14 +138,12 @@ def main(write_queue=None, picam=True, local_server=False):
             tcp_client.sendall(send_msg)
 
     def myput(queue, obj):
-        if queue.full():
-            while not queue.empty():
-                try:
-                    queue.get(block=False)
-                except Exception as e:
-                    print(f"Error: {e}")
-                finally:
-                    queue.put(obj)
+
+        try:
+            queue.put_nowait(obj)
+        except Exception as e:
+            pass
+
 
     threads = []
     threads.append(threading.Thread(target=sensor_read))

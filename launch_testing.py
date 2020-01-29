@@ -16,13 +16,13 @@ def main():
 
     processes = []
     # Start controller_handler.py
-    #processes.append(multiprocessing.Process(target=controller_handler.main))
+    processes.append(multiprocessing.Process(target=controller_handler.main))
 
     # Start ui.py
-    processes.append(multiprocessing.Process(target=ui.main, args=(True,)))
+    #processes.append(multiprocessing.Process(target=ui.main, args=(True,)))
 
     # Start sensor_relay.py
-    processes.append(multiprocessing.Process(target=sensor_relay.main, args=(sensor_relay_producer, False, True)))
+    #processes.append(multiprocessing.Process(target=sensor_relay.main, args=(sensor_relay_producer, False, True)))
 
     # Start naviation.py
     #processes.append(multiprocessing.Process(target=navigation.main, args=(sensor_relay_producer, navigation_producer)))
