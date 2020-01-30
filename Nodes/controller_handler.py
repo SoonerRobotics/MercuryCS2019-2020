@@ -32,6 +32,7 @@ def main():
             global joystick, DEAD_ZONE_Y, c_status
 
             c_status = "Connected"
+            logger.info(c_status)
 
             # Default control dictionary
             control_dict = {

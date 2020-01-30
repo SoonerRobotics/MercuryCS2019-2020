@@ -7,7 +7,7 @@ import help_lib as hl
 def main(receive_sensors=None, receive_nav=None, local_server=False):
     """Switch between controls from navigation and controller, then feed to Arduino"""
     
-    global data_dict, lock, control_dict, autonomous_signal, idle_dict, safe_distance, logger, c_status
+    global data_dict, lock, control_dict, autonomous_signal, safe_distance, logger, c_status
 
     # Create logger
     logger = hl.create_logger(__name__)
@@ -26,14 +26,11 @@ def main(receive_sensors=None, receive_nav=None, local_server=False):
     }
 
     # Define idle
-    idle_dict = {
+    control_dict = {
         "left_stick": 0,
         "right_stick": 0,
         "led": False
     }
-
-    # Define control dict to send
-    control_dict = copy.deepcopy(idle_dict)
 
     # Thread lock
     lock = threading.Lock()
@@ -89,9 +86,9 @@ def main(receive_sensors=None, receive_nav=None, local_server=False):
                 tcp_client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 tcp_client.connect((host_ip, server_port))
                 c_status = "Connected"
+                logger.info(c_status)
             except Exception as e:
                 logger.warn(f"Error: {e}")
-                c_status = "Disconnected"
 
             # While connected, read input from controller and write to control dictionary
             while c_status == "Connected":
@@ -112,7 +109,14 @@ def main(receive_sensors=None, receive_nav=None, local_server=False):
 
     def motor_write():
         """Write controls to the motor"""
-        global control_dict, lock, idle_dict, logger
+        global control_dict, lock, logger
+
+        # Define idle
+        idle_dict = {
+            "left_stick": 0,
+            "right_stick": 0,
+            "led": False
+        }
 
         ser = serial.Serial(timeout = 1) # Set serial timeout to 1 second
         ser.baudrate = 38400

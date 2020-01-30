@@ -141,9 +141,9 @@ def main(write_queue=None, picam=True, local_server=False):
                 tcp_client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 tcp_client.connect((host_ip, server_port))
                 c_status = "Connected"
+                logger.info(c_status)
             except Exception as e:
                 logger.warn(f"Error: {e}")
-                c_status = "Disconnected"
 
             # While connected, write sensors to server
             while c_status == "Connected":

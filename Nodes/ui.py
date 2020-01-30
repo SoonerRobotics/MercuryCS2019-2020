@@ -62,6 +62,7 @@ def main(server=False):
 
             with lock:
                 c_status = "Connected"
+                logger.info(c_status)
 
             while True:
 
