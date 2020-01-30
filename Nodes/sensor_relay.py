@@ -17,10 +17,13 @@ import help_lib as hl
 def main(write_queue=None, picam=True, local_server=False):
     """Read sensors from Arduino and pipe to other processes"""
 
-    global data_dict, lock, logger
+    global data_dict, lock, logger, c_status
 
     # Create logger
     logger = hl.create_logger(__name__)
+
+    # Initial status
+    c_status = "Disconnected"
 
     # Dummy numpy black frame
     dummy_flag, dummy_frame = cv2.imencode(".jpg", np.zeros(shape=(250, 400, 3), dtype=np.uint8))
@@ -121,7 +124,7 @@ def main(write_queue=None, picam=True, local_server=False):
 
     def server_write(local_server=False):
         """Write to ui server"""
-        global data_dict, lock, logger
+        global data_dict, lock, logger, c_status
 
         # Define server ip, port, and client
         server_port = 9000
@@ -130,29 +133,34 @@ def main(write_queue=None, picam=True, local_server=False):
         else:
             host_ip = "192.168.1.52"
 
-        # Attempt to connect to ui server until successful
-        tcp_client = None
+        # Attempt to connect to ui server forever
         logger.info(f"Client Target Address: {host_ip}:{server_port}")
-        while tcp_client is None:
+        while True:
+
             try:
                 tcp_client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 tcp_client.connect((host_ip, server_port))
+                c_status = "Connected"
             except Exception as e:
                 logger.warn(f"Error: {e}")
-                tcp_client = None
+                c_status = "Disconnected"
 
-        # While connected, write sensors to server
-        while True:
+            # While connected, write sensors to server
+            while c_status == "Connected":
 
-            with lock:
-                send_dict = copy.deepcopy(data_dict)
+                with lock:
+                    send_dict = copy.deepcopy(data_dict)
 
-            if send_dict["frame"] is not None:
-                send_dict["frame"] = send_dict["frame"].tolist()
-            send_msg = json.dumps(send_dict) + "\n"
-            send_msg = send_msg.encode()
+                if send_dict["frame"] is not None:
+                    send_dict["frame"] = send_dict["frame"].tolist()
+                send_msg = json.dumps(send_dict) + "\n"
+                send_msg = send_msg.encode()
 
-            tcp_client.sendall(send_msg)
+                try:
+                    tcp_client.sendall(send_msg)
+                except Exception as e:
+                    c_status = "Disconnected"
+                    logger.warn(e)
 
     # Spin up threads
     threads = []

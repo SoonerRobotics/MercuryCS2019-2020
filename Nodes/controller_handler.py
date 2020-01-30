@@ -7,7 +7,10 @@ import help_lib as hl
 def main():
     """Send controller signal to collision avoidance"""
 
-    global joystick, DEAD_ZONE_Y, logger
+    global joystick, DEAD_ZONE_Y, logger, c_status
+
+    # Initial status
+    c_status = "Disconnected"
 
     # Dead zone for y-axis
     DEAD_ZONE_Y = 0.1
@@ -26,7 +29,9 @@ def main():
 
         def handle(self):
 
-            global joystick, DEAD_ZONE_Y
+            global joystick, DEAD_ZONE_Y, c_status
+
+            c_status = "Connected"
 
             # Default control dictionary
             control_dict = {
@@ -39,32 +44,40 @@ def main():
             # While connection exists
             while True:
 
-                pygame.event.get()
+                try:
 
-                # Turn on LED if A is pressed 
-                if joystick.get_button(0) == 1:
-                    contro_dict["led"] = True
+                    pygame.event.get()
 
-                # Turn off LED if B is pressed
-                elif joystick.get_button(1) == 1:
-                    control_dict["led"] = False
+                    # Turn on LED if A is pressed 
+                    if joystick.get_button(0) == 1:
+                        contro_dict["led"] = True
 
-                # Read y-positions of left and right sticks
-                control_dict["leftStick"] = joystick.get_axis(1)
-                control_dict["rightStick"] = joystick.get_axis(3)
+                    # Turn off LED if B is pressed
+                    elif joystick.get_button(1) == 1:
+                        control_dict["led"] = False
 
-                # If y-pos of sticks are in "dead zone", round them to 0
-                # TODO: pygame can do this for us
-                if abs(control_dict["leftStick"]) < DEAD_ZONE_Y:
-                    control_dict["leftStick"] = 0
-                if abs(control_dict["rightStick"]) < DEAD_ZONE_Y:
-                    control_dict["rightStick"] = 0
+                    # Read y-positions of left and right sticks
+                    control_dict["leftStick"] = joystick.get_axis(1)
+                    control_dict["rightStick"] = joystick.get_axis(3)
 
-                # Dump dictionary to a line string and send to collision avoidance
-                send_msg = json.dumps(send_dict) + "\n"
-                send_msg = send_msg.encode()
+                    # If y-pos of sticks are in "dead zone", round them to 0
+                    # TODO: pygame can do this for us
+                    if abs(control_dict["leftStick"]) < DEAD_ZONE_Y:
+                        control_dict["leftStick"] = 0
+                    if abs(control_dict["rightStick"]) < DEAD_ZONE_Y:
+                        control_dict["rightStick"] = 0
 
-                self.request.sendall(send_msg)
+                    # Dump dictionary to a line string and send to collision avoidance
+                    send_msg = json.dumps(send_dict) + "\n"
+                    send_msg = send_msg.encode()
+
+                    self.request.sendall(send_msg)
+
+                # Bad practice but lazy right now
+                except:
+
+                    c_status = "Disconnected"
+                    break
 
     # Start server and serve forever
     HOST, PORT = "localhost", 9001

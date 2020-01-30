@@ -7,10 +7,13 @@ import help_lib as hl
 def main(receive_sensors=None, receive_nav=None, local_server=False):
     """Switch between controls from navigation and controller, then feed to Arduino"""
     
-    global data_dict, lock, control_dict, autonomous_signal, idle_dict, safe_distance, logger
+    global data_dict, lock, control_dict, autonomous_signal, idle_dict, safe_distance, logger, c_status
 
     # Create logger
     logger = hl.create_logger(__name__)
+
+    # Initial status
+    c_status = "Disconnected"
 
     # Define data dict to be send
     data_dict = {
@@ -80,27 +83,32 @@ def main(receive_sensors=None, receive_nav=None, local_server=False):
             host_ip = "192.168.1.52"
 
         # Attempt to connect to server until successful
-        tcp_client = None
         logger.info(f"Client Target Address: {host_ip}:{server_port}")
-        while tcp_client is None:
+        while True:
             try:
                 tcp_client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 tcp_client.connect((host_ip, server_port))
+                c_status = "Connected"
             except Exception as e:
-                #print(f"Error: {e}")
-                tcp_client = None
+                logger.warn(f"Error: {e}")
+                c_status = "Disconnected"
 
-        # While connected, read input from controller and write to control dictionary
-        while True:
+            # While connected, read input from controller and write to control dictionary
+            while c_status == "Connected":
 
-            receive_dict = tcp_client.makefile().readline()
+                try:
+                    receive_dict = tcp_client.makefile().readline()
+                except Exception as e:
+                    c_status = "Disconnected"
+                    logger.warn(e)
+                    continue
 
-            with lock:
-                autonomous_signal = receive_dict.pop("autonomous_signal")
-
-            if not autonomous_signal:
                 with lock:
-                    control_dict = copy.deepcopy(receive_dict)
+                    autonomous_signal = receive_dict.pop("autonomous_signal")
+
+                if not autonomous_signal:
+                    with lock:
+                        control_dict = copy.deepcopy(receive_dict)
 
     def motor_write():
         """Write controls to the motor"""

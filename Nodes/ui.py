@@ -23,10 +23,13 @@ import help_lib as hl
 
 def main(server=False):
     """Start ui for sensor values"""
-    global sensor_dict, lock, vs, logger
+    global sensor_dict, lock, vs, logger, c_status
 
     # Create logger
     logger = hl.create_logger(__name__)
+
+    # Initial status
+    c_status = "Disconnected"
 
     # Initialize the dictionary containing our sensor values
     sensor_dict = {
@@ -35,7 +38,7 @@ def main(server=False):
         "us_left": None,
         "us_right": None,
         "a": None,
-        "m": None
+        "m": None,
         }
 
     # Lock to share among threads
@@ -55,22 +58,35 @@ def main(server=False):
 
         def handle(self):
             # Grab global vars
-            global sensor_dict, lock
+            global sensor_dict, lock, c_status
+
+            with lock:
+                c_status = "Connected"
 
             while True:
 
-                # Receive data from UDP client
-                self.data = self.rfile.readline().strip() ##remove leading and ending whitespace
+                try:
 
-                # Decode data dictionary
-                data_dict = json.loads(self.data)
-                if data_dict["frame"] is not None:
-                    data_dict["frame"] = np.asarray(data_dict["frame"], dtype=np.uint8)
+                    # Receive data from UDP client
+                    self.data = self.rfile.readline().strip() ##remove leading and ending whitespace
 
-                # Write data dictionary with lock
-                with lock:
-                    for data_key in data_dict:
-                        sensor_dict[data_key] = data_dict[data_key]
+                    # Decode data dictionary
+                    data_dict = json.loads(self.data)
+                    if data_dict["frame"] is not None:
+                        data_dict["frame"] = np.asarray(data_dict["frame"], dtype=np.uint8)
+
+                    # Write data dictionary with lock
+                    with lock:
+                        for data_key in data_dict:
+                            sensor_dict[data_key] = data_dict[data_key]
+
+                # Bad practice but lazy right now
+                except:
+
+                    # Write connection status
+                    with lock:
+                        c_status = "Disconnected"
+                    break
 
     @app.route("/")
     def index():
@@ -156,7 +172,7 @@ def main(server=False):
         """Generate the sensor feed for html"""
 
         # grab global references to the sensor dictionary and lock variables
-        global sensor_dict, lock
+        global sensor_dict, lock, c_status
 
         # wait until the lock is acquired
         response_dict = {
@@ -172,6 +188,8 @@ def main(server=False):
             for key in response_dict.keys():
                 if sensor_dict[key] is not None:
                     response_dict[key] = str(sensor_dict[key])
+
+            response_dict["c_status"] = c_status
 
         # return the response generated along with the specific media
         # type (mime type)

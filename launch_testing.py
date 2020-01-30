@@ -16,7 +16,7 @@ def main():
 
     processes = []
     # Start controller_handler.py
-    #processes.append(multiprocessing.Process(target=controller_handler.main))
+    processes.append(multiprocessing.Process(target=controller_handler.main))
 
     # Start ui.py
     processes.append(multiprocessing.Process(target=ui.main, args=(True,)))
