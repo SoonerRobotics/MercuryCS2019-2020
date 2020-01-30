@@ -19,11 +19,16 @@ from flask import render_template
 from imutils.video import VideoStream
 import cv2
 
+import help_lib as hl
+
 def main(server=False):
+    """Start ui for sensor values"""
+    global sensor_dict, lock, vs, logger
+
+    # Create logger
+    logger = hl.create_logger(__name__)
+
     # Initialize the dictionary containing our sensor values
-
-    global sensor_dict, lock, vs
-
     sensor_dict = {
         "frame": None,
         "us_front": None,
@@ -45,27 +50,8 @@ def main(server=False):
     vs = VideoStream(src=0).start()
     time.sleep(2.0)
 
-    class Handler_UDPServer(socketserver.BaseRequestHandler):
-
-        def handle(self):
-            # Grab global vars
-            global sensor_dict, lock
-
-            # Receive data from UDP client
-            self.data = self.request[0].strip() ##remove leading and ending whitespace
-            #self.data = self.myreceive()
-
-            # Decode data dictionary
-            data_dict = json.loads(self.data)
-            if data_dict["frame"] is not None:
-                data_dict["frame"] = np.asarray(data_dict["frame"], dtype=np.uint8)
-
-            # Write data dictionary with lock
-            with lock:
-                for data_key in data_dict:
-                    sensor_dict[data_key] = data_dict[data_key]
-
     class Handler_TCPServer(socketserver.StreamRequestHandler):
+        """Tcp server for ui"""
 
         def handle(self):
             # Grab global vars
@@ -88,18 +74,16 @@ def main(server=False):
 
     @app.route("/")
     def index():
-        # Html shown on screen for UI
+        """Html shown on screen for UI"""
         return render_template("index.html")
 
     def fetch_loop(fetch_func):
-        # To be used as a thread
-        # Loop over sensor fetch function to grab all sensors
+        """Loop over sensor fetch function to grab all sensors"""
         while True:
             fetch_func()
 
     def fetch_sensors_server():
-        # To be used as a thread
-        # Grabs all the sensor values
+        """Grabs all the sensor values from server"""
 
         # Host address and port number
         HOST, PORT = "localhost", 9000
@@ -110,7 +94,7 @@ def main(server=False):
         tcp_server.serve_forever()
 
     def fetch_sensors():
-        # Grabs all the sensor values
+        """Grab all simulated sensor values"""
 
         # Grab global vars
         global vs, sensor_dict, lock
@@ -139,7 +123,7 @@ def main(server=False):
 
     @app.route("/video_feed")
     def video_feed():
-        # Handles the video feed
+        """Generate the video feed for html"""
         # Slightly different from the other feed functions. Generates multipart response
 
         def generate():
@@ -169,6 +153,7 @@ def main(server=False):
 
     @app.route("/sensor_feed", endpoint="sensor_feed")
     def sensor_feed():
+        """Generate the sensor feed for html"""
 
         # grab global references to the sensor dictionary and lock variables
         global sensor_dict, lock

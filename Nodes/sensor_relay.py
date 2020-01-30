@@ -12,9 +12,17 @@ import numpy as np
 import cv2
 import imutils
 
-def main(write_queue=None, picam=True, local_server=False):
-    global data_dict, lock
+import help_lib as hl
 
+def main(write_queue=None, picam=True, local_server=False):
+    """Read sensors from Arduino and pipe to other processes"""
+
+    global data_dict, lock, logger
+
+    # Create logger
+    logger = hl.create_logger(__name__)
+
+    # Dummy numpy black frame
     dummy_flag, dummy_frame = cv2.imencode(".jpg", np.zeros(shape=(250, 400, 3), dtype=np.uint8))
 
     # Define data dict to be send
@@ -31,6 +39,7 @@ def main(write_queue=None, picam=True, local_server=False):
     lock = threading.Lock()
 
     def fetch_frame(vs):
+        """Fetch a frame from the video camera"""
 
         # Grab a frame from the camera stream
         frame = vs.read()
@@ -42,29 +51,32 @@ def main(write_queue=None, picam=True, local_server=False):
             "%A %d %B %Y %I:%M:%S%p"), (10, frame.shape[0] - 10),
             cv2.FONT_HERSHEY_SIMPLEX, 0.35, (0, 0, 255), 1)
 
+        # Encode raw frame as a jpeg
         flag, encodedImage = cv2.imencode(".jpg", frame)
 
         return encodedImage
 
     def sensor_read():
-        global data_dict, lock
+        """Read the sensors from the Arduino"""
+        global data_dict, lock, logger
 
         # Define serial connection
         ser = serial.Serial(timeout = 1) # Set serial timeout to 1 second
         ser.baudrate = 38400
         ser.port = "/dev/ttyUSB0" # TODO: use try/catch to find the port Arduino is connected to automatically
         ser.connected = False
+
+        # Attempt to connect to Arduino until successful
         while not ser.connected:
             try:
                 ser.open()
             except serial.SerialException as e:
-                print(f"Error: {e}")
+                logger.warn(f"Error: {e}")
             else:
                 ser.connected = True
             time.sleep(.5)
 
-
-        # Loop forever
+        # Read sensors for forever
         while True:
 
             received = json.loads(ser.readline().decode())
@@ -73,6 +85,7 @@ def main(write_queue=None, picam=True, local_server=False):
                 data_dict = copy.deepcopy(received)
 
     def cam_read(picam=True):
+        """Read the camera"""
         global data_dict, lock
 
         # Start up camera
@@ -82,7 +95,7 @@ def main(write_queue=None, picam=True, local_server=False):
             vs = imutils.video.VideoStream(src=0).start()
         time.sleep(2.0)
 
-        # Loop forever
+        # Fetch frames for forever
         while True:
 
             frame = fetch_frame(vs)
@@ -92,6 +105,7 @@ def main(write_queue=None, picam=True, local_server=False):
 
 
     def queue_write(queue=None):
+        """Write to multiprocess output queue"""
         global data_dict, lock
 
         while True:
@@ -99,14 +113,15 @@ def main(write_queue=None, picam=True, local_server=False):
             # Put data dictionary into queue if queue isn't full
             if queue is not None:
                 with lock:
-                    myput(queue, data_dict)
+                    hl.myput(queue, data_dict)
                             
             # Break if no queues
             else:
                 break
 
     def server_write(local_server=False):
-        global data_dict, lock
+        """Write to ui server"""
+        global data_dict, lock, logger
 
         # Define server ip, port, and client
         server_port = 9000
@@ -115,16 +130,18 @@ def main(write_queue=None, picam=True, local_server=False):
         else:
             host_ip = "192.168.1.52"
 
+        # Attempt to connect to ui server until successful
         tcp_client = None
-        print(f"Client Target Address: {host_ip}:{server_port}")
+        logger.info(f"Client Target Address: {host_ip}:{server_port}")
         while tcp_client is None:
             try:
                 tcp_client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 tcp_client.connect((host_ip, server_port))
             except Exception as e:
-                #print(f"Error: {e}")
+                logger.warn(f"Error: {e}")
                 tcp_client = None
 
+        # While connected, write sensors to server
         while True:
 
             with lock:
@@ -137,14 +154,7 @@ def main(write_queue=None, picam=True, local_server=False):
 
             tcp_client.sendall(send_msg)
 
-    def myput(queue, obj):
-
-        try:
-            queue.put_nowait(obj)
-        except Exception as e:
-            pass
-
-
+    # Spin up threads
     threads = []
     threads.append(threading.Thread(target=sensor_read))
     threads.append(threading.Thread(target=cam_read, args=(picam,)))

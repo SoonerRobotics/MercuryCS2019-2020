@@ -2,9 +2,15 @@
 
 import sys, serial, json, socket, threading, copy, time
 
+import help_lib as hl
+
 def main(receive_sensors=None, write_queue=None):
+    """Create autonomous navigation controls from sensors"""
     
-    global data_dict, lock, state, control_dict
+    global data_dict, lock, state, control_dict, logger
+
+    # Create logger
+    logger = hl.create_logger(__name__)
 
     # Define data dict to be sent
     data_dict = {
@@ -18,9 +24,9 @@ def main(receive_sensors=None, write_queue=None):
 
     # Define control dict to send
     control_dict = {
-        "left_motor": 5,
-        "right_motor": 5,
-        "arm_motor": 5
+        "left_stick": 5,
+        "right_stick": 5,
+        "led": False
     }
 
     # Thread lock
@@ -32,29 +38,34 @@ def main(receive_sensors=None, write_queue=None):
 
     # Read from sensor relay
     def sensors_read(receive_queue=None):
-        global data_dict, lock
+        """Read sensors from sensor relay"""
+        global data_dict, lock, logger
 
         while True:
 
             if receive_queue is not None:
                 if not receive_queue.empty():
                     received = receive_queue.get()
-                    print(f"Nav: val received {received}")
+
                     with lock:
                         data_dict = copy.deepcopy(received)
             else:
                 break
 
     def queue_write(queue=None):
+        """Write to multiprocess output queue"""
         global data_dict, lock, control_dict
 
         while True:
 
             if queue is not None:
                 with lock:
-                    myput(queue, control_dict)
+                    hl.myput(queue, control_dict)
+            else:
+                break
 
     def state_machine():
+        """State machine for known autonomous navigation"""
         global data_dict, lock, state, control_dict
 
         while True:
@@ -62,13 +73,7 @@ def main(receive_sensors=None, write_queue=None):
             if state == -1:
                 continue
 
-    def myput(queue, obj):
-
-        try:
-            queue.put_nowait(obj)
-        except Exception as e:
-            pass
-
+    # Spin up threads
     threads = []
     threads.append(threading.Thread(target=sensors_read, args=(receive_sensors,)))
     threads.append(threading.Thread(target=queue_write, args=(write_queue,)))
