@@ -6,11 +6,12 @@
 #   Output to nav (on queue)
 #   Output to obstacle avoidance (on queue)
 
-import sys, serial, json, socket, datetime, time, threading, copy, math
+import sys, serial, json, socket, datetime, time, threading, copy, math, sys
 
 import numpy as np
 import cv2
 import imutils
+from imutils.video import VideoStream
 
 import help_lib as hl
 
@@ -94,9 +95,9 @@ def main(write_queue=None, picam=False, local_server=False):
         # Start up camera
         try:
             if picam:
-                vs = imutils.video.VideoStream(usePiCamera=1).start()
+                vs = VideoStream(usePiCamera=1).start()
             else:
-                vs = imutils.video.VideoStream(src=0).start()
+                vs = VideoStream(src=0).start()
             time.sleep(2.0)
         except Exception as e:
             logger.warn(e)
