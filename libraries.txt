@@ -1,0 +1,21 @@
+A list of the libraries used in this project:
+- sys
+- serial
+- json
+- socket
+- threading
+- copy
+- time
+- datetime
+- copy
+- math
+- numpy
+- cv2
+- imutils
+- flask
+- multiprocessing
+- navigation
+- collision_avoidance
+- controller_handler
+- ui
+- enum
