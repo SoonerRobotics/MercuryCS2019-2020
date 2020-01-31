@@ -93,17 +93,21 @@ def main(write_queue=None, picam=False, local_server=False):
         global data_dict, lock, logger
 
         # Start up camera
+        camera_active = False
         try:
             if picam:
                 vs = VideoStream(usePiCamera=1).start()
+                camera_active = True
             else:
                 vs = VideoStream(src=0).start()
+                camera_active = True
             time.sleep(2.0)
         except Exception as e:
             logger.warn(e)
 
+
         # Fetch frames for forever
-        while True:
+        while camera_active:
 
             frame = fetch_frame(vs)
             with lock:
