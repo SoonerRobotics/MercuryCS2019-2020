@@ -2,10 +2,17 @@
 
 import multiprocessing
 
+from Nodes import sensor_relay
+from Nodes import navigation
+from Nodes import collision_avoidance
 from Nodes import controller_handler
 from Nodes import ui
 
 def main():
+
+    # Create queues
+    sensor_relay_producer = multiprocessing.Queue(maxsize=1)
+    navigation_producer = multiprocessing.Queue(maxsize=1)
 
     processes = []
     # Start sensor_relay.py
