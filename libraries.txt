@@ -1,17 +1,7 @@
 A list of the libraries used in this project:
 - serial
-- json
-- socket
-- threading
-- copy
-- copy
 - numpy
 - cv2
 - imutils
 - flask
-- multiprocessing
-- navigation
-- collision_avoidance
-- controller_handler
-- ui
-- enum
+- pygame
