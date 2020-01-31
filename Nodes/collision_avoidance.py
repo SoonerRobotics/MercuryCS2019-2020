@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
-import sys, serial, json, socket, threading, copy, time, logging
+import sys, json, socket, threading, copy, time, logging
+
+import serial
 
 import help_lib as hl
 
@@ -70,14 +72,14 @@ def main(receive_sensors=None, receive_nav=None, local_server=False):
 
     def controller_read(local_server=False):
         """Read controls from controller"""
-        global control_dict, lock, autonomous_signal, logger
+        global control_dict, lock, autonomous_signal, logger, c_status
 
         # Define server ip, port, and client
         server_port = 9001
         if local_server:
             host_ip = "localhost"
         else:
-            host_ip = "192.168.1.52"
+            host_ip = "192.168.1.74"
 
         # Attempt to connect to server until successful
         logger.info(f"Client Target Address: {host_ip}:{server_port}")
@@ -94,7 +96,8 @@ def main(receive_sensors=None, receive_nav=None, local_server=False):
             while c_status == "Connected":
 
                 try:
-                    receive_dict = tcp_client.makefile().readline()
+                    receive_dict = json.loads(tcp_client.makefile().readline())
+                    logger.info(f"Receive dict: {receive_dict}")
                 except Exception as e:
                     c_status = "Disconnected"
                     logger.warn(e)

@@ -2,33 +2,26 @@
 
 import multiprocessing
 
-from Nodes import sensor_relay
-from Nodes import navigation
-from Nodes import collision_avoidance
 from Nodes import controller_handler
 from Nodes import ui
 
 def main():
-    
-    # Create queues
-    sensor_relay_producer = multiprocessing.Queue(maxsize=1)
-    navigation_producer = multiprocessing.Queue(maxsize=1)
 
     processes = []
-    # Start controller_handler.py
-    processes.append(multiprocessing.Process(target=controller_handler.main))
-
-    # Start ui.py
-    processes.append(multiprocessing.Process(target=ui.main, args=(True,)))
-
     # Start sensor_relay.py
-    processes.append(multiprocessing.Process(target=sensor_relay.main, args=(sensor_relay_producer, False, True)))
+    processes.append(multiprocessing.Process(target=sensor_relay.main, args=(sensor_relay_producer,)))
 
     # Start naviation.py
     processes.append(multiprocessing.Process(target=navigation.main, args=(sensor_relay_producer, navigation_producer)))
 
     # Start collision_avoidance.py
-    processes.append(multiprocessing.Process(target=collision_avoidance.main, args=(sensor_relay_producer, navigation_producer, True)))
+    processes.append(multiprocessing.Process(target=collision_avoidance.main, args=(sensor_relay_producer, navigation_producer)))
+    
+    # Start controller_handler.py
+    processes.append(multiprocessing.Process(target=controller_handler.main))
+
+    # Start ui.py
+    processes.append(multiprocessing.Process(target=ui.main))
 
     for process in processes:
         process.start()

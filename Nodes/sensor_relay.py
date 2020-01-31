@@ -14,7 +14,7 @@ import imutils
 
 import help_lib as hl
 
-def main(write_queue=None, picam=True, local_server=False):
+def main(write_queue=None, picam=False, local_server=False):
     """Read sensors from Arduino and pipe to other processes"""
 
     global data_dict, lock, logger, c_status
@@ -89,14 +89,17 @@ def main(write_queue=None, picam=True, local_server=False):
 
     def cam_read(picam=True):
         """Read the camera"""
-        global data_dict, lock
+        global data_dict, lock, logger
 
         # Start up camera
-        if picam:
-            vs = imutils.video.VideoStream(usePiCamera=1).start()
-        else:
-            vs = imutils.video.VideoStream(src=0).start()
-        time.sleep(2.0)
+        try:
+            if picam:
+                vs = imutils.video.VideoStream(usePiCamera=1).start()
+            else:
+                vs = imutils.video.VideoStream(src=0).start()
+            time.sleep(2.0)
+        except Exception as e:
+            logger.warn(e)
 
         # Fetch frames for forever
         while True:
@@ -131,7 +134,7 @@ def main(write_queue=None, picam=True, local_server=False):
         if local_server:
             host_ip = "localhost"
         else:
-            host_ip = "192.168.1.52"
+            host_ip = "192.168.1.74"
 
         # Attempt to connect to ui server forever
         logger.info(f"Client Target Address: {host_ip}:{server_port}")

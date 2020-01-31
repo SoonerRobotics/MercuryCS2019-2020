@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
-import sys, serial, json, socket, threading, copy, time
+import sys, json, socket, threading, copy, time
+
+import serial
 
 import help_lib as hl
 

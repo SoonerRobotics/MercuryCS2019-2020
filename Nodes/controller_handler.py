@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import pygame, serial, json, socketserver
+import pygame, json, socketserver
 
 import help_lib as hl
 
@@ -9,6 +9,9 @@ def main():
 
     global joystick, DEAD_ZONE_Y, logger, c_status
 
+    # Create logger
+    logger = hl.create_logger(__name__)
+
     # Initial status
     c_status = "Disconnected"
 
@@ -16,20 +19,22 @@ def main():
     DEAD_ZONE_Y = 0.1
 
     #setup
-    pygame.display.init()
-    pygame.init()
-    joystick = pygame.joystick.Joystick(0)
-    joystick.init()
-
-    # Create logger
-    logger = hl.create_logger(__name__)
+    try:
+        #pygame.display.init()
+        pygame.joystick.init()
+        logger.info(f"Number of joysticks attached: {pygame.joystick.get_count()}")
+        pygame.init()
+        joystick = pygame.joystick.Joystick(0)
+        joystick.init()
+    except Exception as e:
+        logger.warn(e)
 
     class Handler_TCPServer(socketserver.StreamRequestHandler):
         """Send to signals to collision avoidance"""
 
         def handle(self):
 
-            global joystick, DEAD_ZONE_Y, c_status
+            global joystick, DEAD_ZONE_Y, c_status, logger
 
             c_status = "Connected"
             logger.info(c_status)
@@ -58,18 +63,20 @@ def main():
                         control_dict["led"] = False
 
                     # Read y-positions of left and right sticks
-                    control_dict["leftStick"] = joystick.get_axis(1)
-                    control_dict["rightStick"] = joystick.get_axis(3)
+                    control_dict["left_stick"] = joystick.get_axis(1)
+                    control_dict["right_stick"] = joystick.get_axis(3)
 
                     # If y-pos of sticks are in "dead zone", round them to 0
                     # TODO: pygame can do this for us
-                    if abs(control_dict["leftStick"]) < DEAD_ZONE_Y:
-                        control_dict["leftStick"] = 0
-                    if abs(control_dict["rightStick"]) < DEAD_ZONE_Y:
-                        control_dict["rightStick"] = 0
+                    if abs(control_dict["left_stick"]) < DEAD_ZONE_Y:
+                        control_dict["left_stick"] = 0
+                    if abs(control_dict["right_stick"]) < DEAD_ZONE_Y:
+                        control_dict["right_stick"] = 0
 
                     # Dump dictionary to a line string and send to collision avoidance
-                    send_msg = json.dumps(send_dict) + "\n"
+                    send_msg = json.dumps(control_dict) + "\n"
+
+                    logger.info(f"Send msg: {send_msg}")
                     send_msg = send_msg.encode()
 
                     self.request.sendall(send_msg)
@@ -78,6 +85,7 @@ def main():
                 except:
 
                     c_status = "Disconnected"
+                    logger.info(c_status)
                     break
 
     # Start server and serve forever

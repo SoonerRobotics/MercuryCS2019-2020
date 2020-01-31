@@ -21,7 +21,7 @@ import cv2
 
 import help_lib as hl
 
-def main(server=False):
+def main(server=True):
     """Start ui for sensor values"""
     global sensor_dict, lock, vs, logger, c_status
 
