@@ -6,6 +6,10 @@
 Motor leftMotor;
 Motor rightMotor;
 
+const float yawP = 0.01;
+const float yawI = 0.002;
+const float yawD = 0.0;
+
 float turnPower;
 
 unsigned long startTime;
@@ -14,7 +18,6 @@ const float TURN_DEADZONE = 5.0;
 // Time to finish a turn in milliseconds
 const unsigned long TURN_FINISH_TIME = 5000;
 
-const float ANGLE_CHANGE = 90.0;
 
 // BNO055
 Adafruit_BNO055 bno = Adafruit_BNO055(55);
@@ -58,6 +61,7 @@ void turnToHeading(float currentHeading) {
     turnPower = -yawController.update(0, angleDiff(constrainAngle(orientationData.orientation.x), targetAngle));
     //turnPower = RLUtil::clamp(turnPower, -1, 1);
     Serial.print("Heading: " + String(orientationData.orientation.x));
+    Serial.print("    Target Heading: " + String(targetAngle));
     Serial.println("    turnPower: " + String(turnPower));
     leftMotor.output(-1 * turnPower);
     rightMotor.output(turnPower);
@@ -78,9 +82,16 @@ void setup() {
     // Set to mode where magnetometer is turned off
     bno.setMode(Adafruit_BNO055::OPERATION_MODE_IMUPLUS);
     // Set up the yaw PID controller
-    yawController.begin(0, 0.01, 0.01, 0);
+    yawController.begin(0, yawP, yawI, yawD);
+    yawController.setBounded(true);
+    yawController.setOutputRange(-1.0, 1.0);
     leftMotor.begin(8,9,5).reverse();
     rightMotor.begin(10,12,6).reverse();
+    Serial.println("Input new target heading:");
+    while (!Serial.available()) {
+      
+    }
+    targetAngle = Serial.readStringUntil('\n').toFloat();
     // Initialize loop timer
     last_loop_time = millis();
 }
@@ -101,8 +112,13 @@ void loop() {
       }
       leftMotor.output(0.0);
       rightMotor.output(0.0);
-      delay(3000);
-      targetAngle = constrainAngle(targetAngle + ANGLE_CHANGE);
+      Serial.println("Input new target heading:");
+      while (!Serial.available()) {
+        
+      }
+      targetAngle = Serial.readStringUntil('\n').toFloat();
       Serial.println("New target heading: " + String(targetAngle));
+      yawController.reset();
+      yawController.begin(0, yawP, yawI, yawD);
     }
 }
