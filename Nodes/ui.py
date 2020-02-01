@@ -21,7 +21,7 @@ import cv2
 
 import help_lib as hl
 
-def main(server=True):
+def main(server=True, local=False):
     """Start ui for sensor values"""
     global sensor_dict, lock, vs, logger, c_status
 
@@ -103,7 +103,11 @@ def main(server=True):
         """Grabs all the sensor values from server"""
 
         # Host address and port number
-        HOST, PORT = "localhost", 9000
+        PORT = 9000
+        if local:
+            HOST = "localhost"
+        else:
+            HOST = "192.168.1.74"
 
         socketserver.TCPServer.allow_reuse_address = True
         tcp_server = socketserver.TCPServer((HOST, PORT), Handler_TCPServer)

@@ -4,7 +4,7 @@ import pygame, json, socketserver
 
 import help_lib as hl
 
-def main():
+def main(local=False):
     """Send controller signal to collision avoidance"""
 
     global joystick, DEAD_ZONE_Y, logger, c_status
@@ -89,7 +89,11 @@ def main():
                     break
 
     # Start server and serve forever
-    HOST, PORT = "localhost", 9001
+    PORT = 9001
+    if local:
+        HOST = "localhost"
+    else:
+        HOST = "192.168.1.74"
 
     socketserver.TCPServer.allow_reuse_address = True
     tcp_server = socketserver.TCPServer((HOST, PORT), Handler_TCPServer)

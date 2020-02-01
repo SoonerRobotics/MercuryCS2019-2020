@@ -6,7 +6,7 @@ import serial
 
 import help_lib as hl
 
-def main(receive_sensors=None, receive_nav=None, local_server=False):
+def main(receive_sensors=None, receive_nav=None, local=False):
     """Switch between controls from navigation and controller, then feed to Arduino"""
     
     global data_dict, lock, control_dict, autonomous_signal, safe_distance, logger, c_status
@@ -70,13 +70,13 @@ def main(receive_sensors=None, receive_nav=None, local_server=False):
                             except KeyError as e:
                                 pass
 
-    def controller_read(local_server=False):
+    def controller_read(local=False):
         """Read controls from controller"""
         global control_dict, lock, autonomous_signal, logger, c_status
 
         # Define server ip, port, and client
         server_port = 9001
-        if local_server:
+        if local:
             host_ip = "localhost"
         else:
             host_ip = "192.168.1.74"
@@ -160,7 +160,7 @@ def main(receive_sensors=None, receive_nav=None, local_server=False):
     threads = []
     threads.append(threading.Thread(target=sensors_read, args=(receive_sensors,)))
     threads.append(threading.Thread(target=nav_read, args=(receive_nav,)))
-    threads.append(threading.Thread(target=controller_read, args=(local_server,)))
+    threads.append(threading.Thread(target=controller_read, args=(local,)))
     threads.append(threading.Thread(target=motor_write))
 
     for i in range(len(threads)):

@@ -16,19 +16,28 @@ def main():
 
     processes = []
     # Start sensor_relay.py
-    processes.append(multiprocessing.Process(target=sensor_relay.main, args=(sensor_relay_producer,)))
+    processes.append(multiprocessing.Process(target=sensor_relay.main, 
+        kwargs={"write_queue": sensor_relay_producer,
+                "local": True}))
 
     # Start naviation.py
-    processes.append(multiprocessing.Process(target=navigation.main, args=(sensor_relay_producer, navigation_producer)))
+    processes.append(multiprocessing.Process(target=navigation.main,
+        kwargs={"receive_sensors": sensor_relay_producer,
+                "write_queue": navigation_producer}))
 
     # Start collision_avoidance.py
-    processes.append(multiprocessing.Process(target=collision_avoidance.main, args=(sensor_relay_producer, navigation_producer)))
+    processes.append(multiprocessing.Process(target=collision_avoidance.main,
+        kwargs={"receive_sensors": sensor_relay_producer, 
+                "receive_nav": navigation_producer,
+                "local": True}))
     
     # Start controller_handler.py
-    processes.append(multiprocessing.Process(target=controller_handler.main))
+    processes.append(multiprocessing.Process(target=controller_handler.main,
+        kwargs={"local": True}))
 
     # Start ui.py
-    processes.append(multiprocessing.Process(target=ui.main))
+    processes.append(multiprocessing.Process(target=ui.main,
+        kwargs={"local": True}))
 
     for process in processes:
         process.start()

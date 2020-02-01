@@ -15,7 +15,7 @@ from imutils.video import VideoStream
 
 import help_lib as hl
 
-def main(write_queue=None, picam=False, local_server=False):
+def main(write_queue=None, picam=False, local=False):
     """Read sensors from Arduino and pipe to other processes"""
 
     global data_dict, lock, logger, c_status
@@ -130,13 +130,13 @@ def main(write_queue=None, picam=False, local_server=False):
             else:
                 break
 
-    def server_write(local_server=False):
+    def server_write(local=False):
         """Write to ui server"""
         global data_dict, lock, logger, c_status
 
         # Define server ip, port, and client
         server_port = 9000
-        if local_server:
+        if local:
             host_ip = "localhost"
         else:
             host_ip = "192.168.1.74"
@@ -175,7 +175,7 @@ def main(write_queue=None, picam=False, local_server=False):
     threads.append(threading.Thread(target=sensor_read))
     threads.append(threading.Thread(target=cam_read, args=(picam,)))
     threads.append(threading.Thread(target=queue_write, args=(write_queue,)))
-    threads.append(threading.Thread(target=server_write, args=(local_server,)))
+    threads.append(threading.Thread(target=server_write, args=(local,)))
 
     for i in range(len(threads)):
         threads[i].daemon = True
