@@ -94,25 +94,28 @@ def main(write_queue=None, picam=False, local=False):
 
         # Start up camera
         camera_active = False
-        try:
-            if picam:
-                vs = VideoStream(usePiCamera=1).start()
-                camera_active = True
-            else:
-                vs = VideoStream(src=0).start()
-                camera_active = True
-            time.sleep(2.0)
-        except Exception as e:
-            logger.warn(e)
+        while not camera_active:
+            try:
+                if picam:
+                    vs = VideoStream(usePiCamera=1).start()
+                    camera_active = True
+                else:
+                    vs = VideoStream(src=0).start()
+                    camera_active = True
+                time.sleep(2.0)
+            except Exception as e:
+                logger.warn(e)
 
 
-        # Fetch frames for forever
-        while camera_active:
-
-            frame = fetch_frame(vs)
-            with lock:
-                # Write frame to dict, since it's only available to the pi
-                data_dict["frame"] = copy.deepcopy(frame)
+            # Fetch frames for forever
+            while camera_active:
+                try:
+                    frame = fetch_frame(vs)
+                    with lock:
+                        # Write frame to dict, since it's only available to the pi
+                        data_dict["frame"] = copy.deepcopy(frame)
+                except:
+                    camera_active = False
 
 
     def queue_write(queue=None):
