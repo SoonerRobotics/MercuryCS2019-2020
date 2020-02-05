@@ -1,0 +1,614 @@
+[ 2020-02-04 23:58:54,435 : Nodes.collision_avoidance : INFO ] --------Session start--------
+[ 2020-02-04 23:58:54,503 : Nodes.collision_avoidance : INFO ] Client Target Address: 192.168.1.74:9001
+[ 2020-02-04 23:58:54,527 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:58:54,582 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:58:54,627 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:54,715 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:55,098 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:58:55,601 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:58:55,716 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:55,724 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:55,776 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:55,799 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:55,801 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:58:55,810 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:58:55,819 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:55,822 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:55,840 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:55,855 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:55,995 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:56,039 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:58:56,153 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:58:56,171 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:58:56,229 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:56,644 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:56,668 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:58:56,680 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:58:56,837 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:58:56,870 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:56,871 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:58:56,917 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:58:56,922 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:56,927 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:56,951 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:56,956 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:56,966 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,053 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,127 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,134 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,135 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,183 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:58:57,184 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,226 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,268 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,269 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,277 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,278 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:58:57,291 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:58:57,316 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,319 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,325 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,326 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,328 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,336 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,339 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,342 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,388 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,389 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,402 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,410 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:58:57,454 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:58:57,476 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,553 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,658 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,699 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:58:57,700 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:58:57,770 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:58:57,793 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,811 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,837 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,853 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,856 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,860 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,867 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,893 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,945 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,983 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:57,996 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,019 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,043 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,057 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,120 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,149 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,168 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:58:58,291 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:58:58,305 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:58:58,362 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,496 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,522 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:58:58,537 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:58:58,541 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,552 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,591 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,599 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,611 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,619 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,652 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,668 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,785 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:58:58,817 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:58:58,833 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,835 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:58:58,846 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,854 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,893 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,894 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,909 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,955 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,956 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:58,959 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:59,003 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:59,024 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:59,027 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:59,066 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:59,267 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:58:59,353 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:00,136 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:00,182 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:00,263 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:00,304 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:00,315 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:00,347 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:00,355 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:00,383 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:00,411 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:00,435 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:00,442 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:00,447 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:00,477 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:00,552 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:00,555 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:00,577 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:00,587 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:00,588 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:00,594 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:00,600 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:00,651 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:00,673 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:00,824 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:00,838 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:00,929 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:00,930 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:00,938 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:00,948 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:00,949 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:00,986 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:00,988 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,001 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,005 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,010 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,017 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,025 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,036 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,058 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,063 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,101 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,150 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,177 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,184 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,195 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:01,230 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:01,343 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,344 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:01,356 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:01,388 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:01,420 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,456 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,458 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,482 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,506 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:01,516 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:01,522 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,550 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,580 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,622 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,624 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:01,642 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:01,656 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,696 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,777 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,778 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:01,784 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:01,815 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,852 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,857 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,858 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:01,883 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,949 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,975 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,981 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:01,995 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:02,029 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:02,053 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,194 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,195 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:02,210 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:02,224 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,235 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,249 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,287 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,312 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,385 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,395 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,418 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,451 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:02,453 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,486 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,491 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,492 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:02,521 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:02,523 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,541 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,543 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,548 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,556 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,566 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,615 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,703 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,705 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:02,734 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:02,746 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,747 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,750 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,752 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,756 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,778 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,788 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,799 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,878 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,881 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:02,903 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:02,921 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,925 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,943 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,979 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:02,986 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:03,010 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,036 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:03,053 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:03,055 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,060 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,064 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,075 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,080 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,111 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,114 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,124 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,138 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,143 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,145 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,148 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,151 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,163 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,191 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:03,215 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:03,230 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,243 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,318 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,346 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:03,371 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:03,384 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,395 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,396 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,398 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,403 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,415 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,434 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,436 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,441 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,443 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,447 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,450 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,458 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,461 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,466 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,550 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,593 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:03,613 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,642 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:03,667 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:03,670 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,724 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,745 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,764 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,821 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:03,914 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:03,935 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,937 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,944 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,946 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,957 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,971 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,972 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,982 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,987 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,993 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:03,996 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,005 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,050 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,057 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,092 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,114 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,136 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:04,138 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,214 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,246 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,262 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,282 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,355 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,523 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:04,534 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:04,546 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,549 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,552 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,555 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,596 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,607 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,609 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,615 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,638 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,648 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,649 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:04,662 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,668 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,671 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,676 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,686 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,693 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,696 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,699 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,718 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,741 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,760 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,765 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,781 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,789 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,791 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,810 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,830 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:04,912 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:04,960 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:04,990 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:05,012 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:05,021 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:05,042 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:05,067 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:05,103 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:05,105 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:05,134 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:05,149 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:05,156 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:05,174 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:05,179 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:05,417 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:05,453 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:05,605 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:05,649 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:05,664 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:05,665 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:05,705 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:05,735 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:05,905 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:05,907 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:05,983 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:05,995 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:06,014 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:06,018 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:06,099 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:06,101 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:06,107 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:06,194 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:06,252 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:06,331 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:06,379 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:06,565 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:06,693 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:06,723 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:06,791 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:06,899 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:06,930 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:06,938 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:06,975 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,022 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,053 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,120 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,133 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,171 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,273 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,315 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:07,317 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:07,329 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:07,334 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,354 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,358 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,376 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,382 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,433 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,489 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,557 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,596 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,623 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,698 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,778 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,820 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,853 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:07,864 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,876 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,891 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:07,903 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:07,950 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:07,976 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,005 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,009 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,075 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,081 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,122 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,143 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,179 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,221 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,223 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:08,261 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:08,266 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,291 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,371 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,377 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:08,422 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,458 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,519 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,529 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,531 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:08,585 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:08,586 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,588 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,601 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,603 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,617 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,622 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,685 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,688 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,690 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,706 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,743 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,744 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,753 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,772 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,813 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,823 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,824 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,827 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,835 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,852 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,905 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,928 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:08,935 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:08,970 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:08,972 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:08,973 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,033 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,036 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,047 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,065 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,089 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,109 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,125 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,127 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,139 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,147 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,155 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:09,169 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:09,181 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,202 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,204 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,206 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,221 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,227 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,231 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,233 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,253 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,278 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,289 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,306 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,311 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:09,528 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:10,376 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:10,398 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:10,461 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:10,500 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:10,539 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:10,542 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:10,544 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:10,570 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:10,577 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:10,583 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:10,608 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:10,654 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:10,755 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:10,769 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:10,796 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:10,806 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:10,819 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:10,840 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:10,888 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:10,890 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:10,896 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:10,921 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:10,955 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:10,957 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:11,013 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:11,046 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,082 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,101 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,112 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,125 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,176 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:11,221 : Nodes.collision_avoidance : INFO ] Connected
+[ 2020-02-04 23:59:11,249 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,277 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,282 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,297 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,300 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,303 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,329 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,337 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,386 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,423 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:11,430 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,447 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,473 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,486 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,488 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,505 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,549 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,588 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,605 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,688 : Nodes.collision_avoidance : INFO ] Receive dict: {'left_stick': 0, 'right_stick': 0, 'led': False, 'autonomous_signal': False}
+[ 2020-02-04 23:59:11,692 : Nodes.collision_avoidance : WARNING ] Expecting value: line 1 column 1 (char 0)
+[ 2020-02-04 23:59:11,753 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:11,794 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:11,862 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:11,941 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:11,955 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:11,957 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:12,023 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,141 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,166 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,184 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,207 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,326 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,429 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,600 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:12,688 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,733 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,800 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,876 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,923 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,948 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,116 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,121 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,126 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,140 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,170 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,193 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,195 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:13,207 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,303 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,330 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,354 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,359 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,364 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,380 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,384 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,401 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,450 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,531 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,631 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,658 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,665 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,686 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,692 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,696 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,701 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,702 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:13,706 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,711 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,826 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,976 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,980 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,018 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,054 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,110 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,144 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,152 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,171 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,214 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,218 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:14,236 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,243 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,248 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,260 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,272 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,334 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,383 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,439 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,489 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,609 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,705 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,741 : Nodes.collision_avoidance : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:14,833 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,848 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,869 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,877 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,944 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:15,008 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:15,082 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:15,090 : Nodes.collision_avoidance : WARNING ] Error: [Errno 111] Connection refused
