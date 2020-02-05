@@ -1,10 +1,21 @@
 #!/usr/bin/env python3
 
-import sys, serial, json, socket, threading, copy, time
+import sys, json, socket, threading, copy, time, logging
 
-def main(receive_sensors=None, receive_nav=None):
+import serial
+
+import help_lib as hl
+
+def main(receive_sensors=None, receive_nav=None, local=False):
+    """Switch between controls from navigation and controller, then feed to Arduino"""
     
-    global data_dict, lock, control_dict, autonomous_signal, idle_dict, safe_distance
+    global data_dict, lock, control_dict, autonomous_signal, safe_distance, logger, c_status
+
+    # Create logger
+    logger = hl.create_logger(__name__)
+
+    # Initial status
+    c_status = "Disconnected"
 
     # Define data dict to be send
     data_dict = {
@@ -17,14 +28,11 @@ def main(receive_sensors=None, receive_nav=None):
     }
 
     # Define idle
-    idle_dict = {
-        "left_motor": 0,
-        "right_motor": 0,
-        "arm_motor": 0
+    control_dict = {
+        "left_stick": 0,
+        "right_stick": 0,
+        "led": False
     }
-
-    # Define control dict to send
-    control_dict = copy.deepcopy(idle_dict)
 
     # Thread lock
     lock = threading.Lock()
@@ -33,6 +41,7 @@ def main(receive_sensors=None, receive_nav=None):
     autonomous_signal = False
 
     def sensors_read(receive_queue=None):
+        """Read sensors from sensor relay"""
         global data_dict, lock
 
         while True:
@@ -41,9 +50,10 @@ def main(receive_sensors=None, receive_nav=None):
                 if not receive_queue.empty():
                     received = receive_queue.get()
                     with lock:
-                        data_dict = copy.deecopy(received)
+                        data_dict = copy.deepcopy(received)
 
     def nav_read(receive_queue=None):
+        """Read controls from navigation"""
         global control_dict, lock
 
         while True:
@@ -60,34 +70,73 @@ def main(receive_sensors=None, receive_nav=None):
                             except KeyError as e:
                                 pass
 
-    def controller_read():
-        global control_dict, lock
+    def controller_read(local=False):
+        """Read controls from controller"""
+        global control_dict, lock, autonomous_signal, logger, c_status
 
         # Define server ip, port, and client
-        host_ip, server_port = "192.168.1.52", 9999
-        udp_client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        server_port = 9001
+        if local:
+            host_ip = "localhost"
+        else:
+            host_ip = "192.168.1.74"
 
+        # Attempt to connect to server until successful
+        logger.info(f"Client Target Address: {host_ip}:{server_port}")
         while True:
-            received = udp_client.recv(1024)
-            with lock:
-                control_dict = json.loads(received.decode())
+            try:
+                tcp_client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                tcp_client.connect((host_ip, server_port))
+                c_status = "Connected"
+                logger.info(c_status)
+            except Exception as e:
+                logger.warn(f"Error: {e}")
+
+            # While connected, read input from controller and write to control dictionary
+            while c_status == "Connected":
+
+                try:
+                    receive_dict = json.loads(tcp_client.makefile().readline())
+                    logger.info(f"Receive dict: {receive_dict}")
+                except Exception as e:
+                    c_status = "Disconnected"
+                    logger.warn(e)
+                    continue
+
+                with lock:
+                    autonomous_signal = receive_dict.pop("autonomous_signal")
+
+                if not autonomous_signal:
+                    with lock:
+                        control_dict = copy.deepcopy(receive_dict)
 
     def motor_write():
-        global control_dict, lock, idle_dict
+        """Write controls to the motor"""
+        global control_dict, lock, logger
+
+        # Define idle
+        idle_dict = {
+            "left_stick": 0,
+            "right_stick": 0,
+            "led": False
+        }
 
         ser = serial.Serial(timeout = 1) # Set serial timeout to 1 second
         ser.baudrate = 38400
         ser.port = "/dev/ttyUSB0" # TODO: use try/catch to find the port Arduino is connected to automatically
         ser.connected = False
+
+        # Attempt to connect to Arduino until successful
         while not ser.connected:
             try:
                 ser.open()
             except serial.SerialException as e:
-                print(f"Error: {e}")
+                logger.warn(f"Error: {e}")
             else:
                 ser.connected = True
             time.sleep(.5)
 
+        # While connected, write filtered control dictionary to Arduino
         while True:
 
             with lock:
@@ -101,24 +150,17 @@ def main(receive_sensors=None, receive_nav=None):
                 ser.write(json.dumps(idle_dict).encode())
 
     def collision_filter(control_dict):
-        # Dummy function for now
+        """Decide if the control dictionary causes a collision"""
 
         global data_dict, safe_distance, lock
 
         return True
 
-    def myput(queue, obj):
-
-        try:
-            queue.put_nowait(obj)
-        except Exception as e:
-            pass
-                
-
+    # Spin up threads
     threads = []
     threads.append(threading.Thread(target=sensors_read, args=(receive_sensors,)))
     threads.append(threading.Thread(target=nav_read, args=(receive_nav,)))
-    threads.append(threading.Thread(target=controller_read))
+    threads.append(threading.Thread(target=controller_read, args=(local,)))
     threads.append(threading.Thread(target=motor_write))
 
     for i in range(len(threads)):
@@ -127,8 +169,6 @@ def main(receive_sensors=None, receive_nav=None):
 
     for i in range(len(threads)):
         threads[i].join()
-
-
 
 if __name__ == "__main__":
     main()
