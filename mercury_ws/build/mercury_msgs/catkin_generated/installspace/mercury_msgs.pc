@@ -3,6 +3,6 @@ prefix=/home/cody/Mercury/MercuryCS2019-2020/mercury_ws/install
 Name: mercury_msgs
 Description: Description of mercury_msgs
 Version: 0.0.0
-Cflags: 
+Cflags: -I${prefix}/include
 Libs: -L${prefix}/lib 
 Requires: 

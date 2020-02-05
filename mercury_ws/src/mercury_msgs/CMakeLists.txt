@@ -55,6 +55,11 @@ find_package(catkin REQUIRED COMPONENTS
 #   Message2.msg
 # )
 
+add_message_files(
+  FILES
+  motors.msg
+)
+
 ## Generate services in the 'srv' folder
 # add_service_files(
 #   FILES
@@ -74,6 +79,10 @@ find_package(catkin REQUIRED COMPONENTS
 #   DEPENDENCIES
 #   std_msgs
 # )
+
+generate_messages(
+  DEPENDENCIES
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
