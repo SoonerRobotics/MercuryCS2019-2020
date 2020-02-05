@@ -6,9 +6,9 @@
 Motor leftMotor;
 Motor rightMotor;
 
-const float yawP = 0.01;
+const float yawP = 0.02;
 const float yawI = 0.002;
-const float yawD = 0.0;
+const float yawD = 0.001;
 
 float turnPower;
 
