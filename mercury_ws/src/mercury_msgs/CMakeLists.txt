@@ -10,6 +10,8 @@ project(mercury_msgs)
 find_package(catkin REQUIRED COMPONENTS
   message_generation
   message_runtime
+  roscpp
+  rospy
   std_msgs
 )
 
@@ -52,10 +54,6 @@ find_package(catkin REQUIRED COMPONENTS
 #   Message1.msg
 #   Message2.msg
 # )
-add_message_files(
-    FILES
-    motors.msg
-)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -109,7 +107,7 @@ add_message_files(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES mercury_msgs
-#  CATKIN_DEPENDS message_generation message_runtime std_msgs
+#  CATKIN_DEPENDS message_generation message_runtime roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
 

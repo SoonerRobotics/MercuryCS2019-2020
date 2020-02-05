@@ -38,10 +38,6 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mercury_msgs/msg" TYPE FILE FILES "/home/cody/Mercury/MercuryCS2019-2020/mercury_ws/src/mercury_msgs/msg/motors.msg")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/cody/Mercury/MercuryCS2019-2020/mercury_ws/build/mercury_msgs/catkin_generated/installspace/mercury_msgs.pc")
 endif()
 
