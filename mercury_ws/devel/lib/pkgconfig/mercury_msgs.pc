@@ -1,8 +1,0 @@
-prefix=/home/cody/Mercury/MercuryCS2019-2020/mercury_ws/devel
-
-Name: mercury_msgs
-Description: Description of mercury_msgs
-Version: 0.0.0
-Cflags: -I/home/cody/Mercury/MercuryCS2019-2020/mercury_ws/devel/include
-Libs: -L${prefix}/lib 
-Requires: 

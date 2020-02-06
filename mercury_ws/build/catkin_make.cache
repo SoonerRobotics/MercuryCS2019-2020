@@ -1,2 +1,0 @@
-mercury_msgs:mercury_nav:mercury_serial
--DCATKIN_DEVEL_PREFIX=/home/cody/Mercury/MercuryCS2019-2020/mercury_ws/devel -DCMAKE_INSTALL_PREFIX=/home/cody/Mercury/MercuryCS2019-2020/mercury_ws/install -G Unix Makefiles
