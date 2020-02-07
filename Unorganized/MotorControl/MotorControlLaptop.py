@@ -43,7 +43,7 @@ class Handler_UDPServer(socketserver.BaseRequestHandler):
         
 if __name__ == "__main__":
     # TODO: figure out a better way to find the host ip
-    HOST, PORT = "192.168.1.52", 9999
+    HOST, PORT = "10.8.0.4", 9999
     # TODO: do we still need this? leftover from switch from TCP to UDP
     socketserver.UDPServer.allow_reuse_address = True
     # Init the UDP server object, bind it to the localhost on 9999 port
