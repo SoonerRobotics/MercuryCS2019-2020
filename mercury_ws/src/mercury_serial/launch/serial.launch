@@ -1,0 +1,8 @@
+<launch>
+
+    <node pkg="mercury_serial" type="motors_node.py" name="motors_node" />
+
+    <node pkg="mercury_serial" type="serial_sensor_receiver_node.py" name="serial_sensor_receiver_node" />
+
+</launch>
+
