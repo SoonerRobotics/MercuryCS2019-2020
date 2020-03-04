@@ -8,7 +8,7 @@ import serial
 print("Scanning USB Ports...")
 if sys.platform.startswith("linux"):
     print("Linux detected")
-    ports = glob.glob("dev/tty[A-Za-z]*")
+    ports = glob.glob('/dev/tty[A-Za-z]*')
 else:
     print("Unsupported OS")
 
