@@ -11,6 +11,7 @@ if __name__ == "__main__":
     rospy.init_node("serial_setup")
     pub = rospy.Publisher("/mercury/ports", ports, queue_size=1)
     port_names = ports()
+    # TODO: check ttyUSB0 to ttyUSB4 instead of just ttyUSB0 and ttyUSB1
     ser_USB0 = serial.Serial(timeout = 1)
     ser_USB0.baudrate = 38400
     ser_USB0.port = "/dev/ttyUSB0"
