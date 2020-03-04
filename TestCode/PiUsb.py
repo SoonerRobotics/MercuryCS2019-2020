@@ -11,7 +11,6 @@ if sys.platform.startswith("linux"):
     ports = glob.glob("dev/tty[A-Za-z]*")
 else:
     print("Unsupported OS")
-    return
 
 result = []
 
