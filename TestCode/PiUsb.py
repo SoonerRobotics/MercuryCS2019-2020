@@ -20,6 +20,8 @@ for port in ports:
         s = serial.Serial(port)
         s.close()
         result.append(port)
+    except:
+        pass
 
 print(result)
 
