@@ -4,6 +4,3 @@ float32 us_right
 float32 mag_x
 float32 mag_y
 float32 mag_z
-float32 enc_left
-float32 enc_right
-float32 heading
