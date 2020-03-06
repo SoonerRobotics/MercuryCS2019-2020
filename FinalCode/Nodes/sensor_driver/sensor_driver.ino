@@ -2,16 +2,16 @@
 
 /* Declaring constants that will not be changing throughout the program */
 // First sensor, polling one that goes on the front of the bot
-const int S1_TRIG = 12;
-const int S1_ECHO = 11;
+const int S1_TRIG = 9;
+const int S1_ECHO = 3;
 /* Deprecated Sensor code
 const int S1_PIN = A0;
 const double NUM_SAMPLES = 20.0;*/
 // Second sensor, polling one that goes on the right side of the bot
-const int S2_TRIG = 10;
-const int S2_ECHO = 9;
+const int S2_TRIG = 5;
+const int S2_ECHO = 4;
 // Third sensor, polling one that goes on the left side of the bot
-const int S3_TRIG = 8;
+const int S3_TRIG = 6;
 const int S3_ECHO = 7;
 
 bool moving = false; //OMG, the bot should not start moving on startup
