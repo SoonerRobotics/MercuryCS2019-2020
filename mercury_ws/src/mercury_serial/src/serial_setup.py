@@ -12,7 +12,7 @@ if __name__ == "__main__":
     rospy.init_node("serial_setup")
     pub = rospy.Publisher("/mercury/ports", ports, queue_size=1)
     # Get USB ports that are connected to an Arduino
-    con_ports = glob.glob('/dev/tty[USB]*')
+    con_ports = glob.glob('/dev/ttyUSB*')
     # Make sure only two USB ports have an Arduino connected
     if len(con_ports) is not 2:
         # Stop node if there aren't two valid USB ports to check
