@@ -19,18 +19,26 @@ from flask import render_template
 from imutils.video import VideoStream
 import cv2
 
-def main(server=False):
+import help_lib as hl
+
+def main(server=True, local=False):
+    """Start ui for sensor values"""
+    global sensor_dict, lock, vs, logger, c_status
+
+    # Create logger
+    logger = hl.create_logger(__name__)
+
+    # Initial status
+    c_status = "Disconnected"
+
     # Initialize the dictionary containing our sensor values
-
-    global sensor_dict, lock, vs
-
     sensor_dict = {
         "frame": None,
         "us_front": None,
         "us_left": None,
         "us_right": None,
         "a": None,
-        "m": None
+        "m": None,
         }
 
     # Lock to share among threads
@@ -45,64 +53,61 @@ def main(server=False):
     vs = VideoStream(src=0).start()
     time.sleep(2.0)
 
-    class Handler_UDPServer(socketserver.BaseRequestHandler):
-
-        def handle(self):
-            # Grab global vars
-            global sensor_dict, lock
-
-            # Receive data from UDP client
-            self.data = self.request[0].strip() ##remove leading and ending whitespace
-            #self.data = self.myreceive()
-
-            # Decode data dictionary
-            data_dict = json.loads(self.data)
-            if data_dict["frame"] is not None:
-                data_dict["frame"] = np.asarray(data_dict["frame"], dtype=np.uint8)
-
-            # Write data dictionary with lock
-            with lock:
-                for data_key in data_dict:
-                    sensor_dict[data_key] = data_dict[data_key]
-
     class Handler_TCPServer(socketserver.StreamRequestHandler):
+        """Tcp server for ui"""
 
         def handle(self):
             # Grab global vars
-            global sensor_dict, lock
+            global sensor_dict, lock, c_status
+
+            with lock:
+                c_status = "Connected"
+                logger.info(c_status)
 
             while True:
 
-                # Receive data from UDP client
-                self.data = self.rfile.readline().strip() ##remove leading and ending whitespace
+                try:
 
-                # Decode data dictionary
-                data_dict = json.loads(self.data)
-                if data_dict["frame"] is not None:
-                    data_dict["frame"] = np.asarray(data_dict["frame"], dtype=np.uint8)
+                    # Receive data from UDP client
+                    self.data = self.rfile.readline().strip() ##remove leading and ending whitespace
 
-                # Write data dictionary with lock
-                with lock:
-                    for data_key in data_dict:
-                        sensor_dict[data_key] = data_dict[data_key]
+                    # Decode data dictionary
+                    data_dict = json.loads(self.data)
+                    if data_dict["frame"] is not None:
+                        data_dict["frame"] = np.asarray(data_dict["frame"], dtype=np.uint8)
+
+                    # Write data dictionary with lock
+                    with lock:
+                        for data_key in data_dict:
+                            sensor_dict[data_key] = data_dict[data_key]
+
+                # Bad practice but lazy right now
+                except:
+
+                    # Write connection status
+                    with lock:
+                        c_status = "Disconnected"
+                    break
 
     @app.route("/")
     def index():
-        # Html shown on screen for UI
+        """Html shown on screen for UI"""
         return render_template("index.html")
 
     def fetch_loop(fetch_func):
-        # To be used as a thread
-        # Loop over sensor fetch function to grab all sensors
+        """Loop over sensor fetch function to grab all sensors"""
         while True:
             fetch_func()
 
     def fetch_sensors_server():
-        # To be used as a thread
-        # Grabs all the sensor values
+        """Grabs all the sensor values from server"""
 
         # Host address and port number
-        HOST, PORT = "localhost", 9000
+        PORT = 9000
+        if local:
+            HOST = "localhost"
+        else:
+            HOST = "192.168.1.74"
 
         socketserver.TCPServer.allow_reuse_address = True
         tcp_server = socketserver.TCPServer((HOST, PORT), Handler_TCPServer)
@@ -110,7 +115,7 @@ def main(server=False):
         tcp_server.serve_forever()
 
     def fetch_sensors():
-        # Grabs all the sensor values
+        """Grab all simulated sensor values"""
 
         # Grab global vars
         global vs, sensor_dict, lock
@@ -139,7 +144,7 @@ def main(server=False):
 
     @app.route("/video_feed")
     def video_feed():
-        # Handles the video feed
+        """Generate the video feed for html"""
         # Slightly different from the other feed functions. Generates multipart response
 
         def generate():
@@ -169,9 +174,10 @@ def main(server=False):
 
     @app.route("/sensor_feed", endpoint="sensor_feed")
     def sensor_feed():
+        """Generate the sensor feed for html"""
 
         # grab global references to the sensor dictionary and lock variables
-        global sensor_dict, lock
+        global sensor_dict, lock, c_status
 
         # wait until the lock is acquired
         response_dict = {
@@ -187,6 +193,8 @@ def main(server=False):
             for key in response_dict.keys():
                 if sensor_dict[key] is not None:
                     response_dict[key] = str(sensor_dict[key])
+
+            response_dict["c_status"] = c_status
 
         # return the response generated along with the specific media
         # type (mime type)

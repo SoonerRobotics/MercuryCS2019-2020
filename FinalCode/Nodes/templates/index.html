@@ -5,6 +5,7 @@
   <body>
     <h1>Pi Video Surveillance</h1>
     <img src="{{ url_for('video_feed') }}">
+    <p>Connection Status: <span id="c_status">Status here</span></p>
     <p>Ultrasonic Front: <span id="us_front">Sensor data here</span></p>
     <p>Ultrasonic Left: <span id="us_left">Sensor data here</span></p>
     <p>Ultrasonic Right: <span id="us_right">Sensor data here</span></p>
@@ -18,6 +19,7 @@
         fetch("{{ url_for('sensor_feed') }}")
         .then(response => {
                 response.json().then(j => {
+                    c_status.innerHTML = j.c_status;
                     us_front.innerHTML = j.us_front;
                     us_left.innerHTML = j.us_left;
                     us_right.innerHTML = j.us_right;

@@ -1,0 +1,150 @@
+[ 2020-02-04 23:58:54,413 : Nodes.sensor_relay : INFO ] --------Session start--------
+[ 2020-02-04 23:58:54,428 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:58:54,443 : Nodes.sensor_relay : INFO ] Client Target Address: 192.168.1.74:9000
+[ 2020-02-04 23:58:54,486 : Nodes.sensor_relay : INFO ] Connected
+[ 2020-02-04 23:58:54,933 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:58:55,435 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:58:55,955 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:58:56,465 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:58:56,972 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:58:57,484 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:58:58,010 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:58:58,520 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:58:59,044 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:58:59,549 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:00,677 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:01,193 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:01,724 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:02,233 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:02,750 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:03,271 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:03,776 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:04,296 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:05,077 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:05,593 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:06,142 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:06,677 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:07,192 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:07,710 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:08,229 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:08,756 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:09,274 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:09,802 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:10,879 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:11,406 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:11,710 : Nodes.sensor_relay : WARNING ] [Errno 32] Broken pipe
+[ 2020-02-04 23:59:11,787 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:11,796 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:11,904 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:11,912 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:11,937 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:11,959 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:11,986 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,005 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,056 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,113 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,119 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,149 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,174 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,194 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,232 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,265 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,300 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,338 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,381 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,407 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,413 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,434 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:12,441 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,463 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,477 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,516 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,565 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,585 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,649 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,681 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,707 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,766 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,820 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,883 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,916 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,955 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:12,958 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:12,994 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,044 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,189 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,215 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,270 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,302 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,348 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,359 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,378 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,400 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,414 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,423 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,504 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,532 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,545 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:13,595 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,652 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,673 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,715 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,744 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,793 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,827 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,847 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,868 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,880 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,889 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,918 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,938 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:13,962 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,013 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,028 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,069 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,095 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,117 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:14,134 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,158 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,170 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,188 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,196 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,206 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,219 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,229 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,238 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,260 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,278 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,298 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,330 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,382 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,406 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,429 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,442 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,462 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,481 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,492 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,528 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,541 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,575 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,606 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,624 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:14,627 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,682 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,696 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,714 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,744 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,772 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,826 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,866 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,885 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,914 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,987 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:14,998 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:15,008 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:15,037 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:15,070 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:15,114 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:15,140 : Nodes.sensor_relay : WARNING ] Error: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+[ 2020-02-04 23:59:15,146 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
+[ 2020-02-04 23:59:15,237 : Nodes.sensor_relay : WARNING ] Error: [Errno 111] Connection refused
