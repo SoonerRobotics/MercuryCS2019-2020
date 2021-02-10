@@ -2,16 +2,16 @@
 
 /* Declaring constants that will not be changing throughout the program */
 // First sensor, polling one that goes on the front of the bot
-const int S1_TRIG = 12;
-const int S1_ECHO = 11;
+const int S1_TRIG = 9;
+const int S1_ECHO = 3;
 /* Deprecated Sensor code
 const int S1_PIN = A0;
 const double NUM_SAMPLES = 20.0;*/
 // Second sensor, polling one that goes on the right side of the bot
-const int S2_TRIG = 10;
-const int S2_ECHO = 9;
+const int S2_TRIG = 5;
+const int S2_ECHO = 4;
 // Third sensor, polling one that goes on the left side of the bot
-const int S3_TRIG = 8;
+const int S3_TRIG = 6;
 const int S3_ECHO = 7;
 
 bool moving = false; //OMG, the bot should not start moving on startup
@@ -46,7 +46,7 @@ void loop() {
   else {
     if (SensorFront.distanceInMillimeters() > CLEARANCE) {
       Serial.println("Way in front cleared, moving again.");
-      // TODO: Add code to actually control motors on the bot
+      sum = drivewheels(10,10);
       moving = true;
     }
     else {
@@ -55,23 +55,41 @@ void loop() {
 
       if (bool1 && bool2) {
         Serial.println("Backing up, sides blocked");
-        // TODO: Include code to move backwards
+        sum = backup(0);
       }
       else if (bool1 && !(bool2)) {
         Serial.println("Backing up, Right Side blocked");
-        // TODO: Include code to move backwards and to the left
+        sum = backup(-1);
       }
       else if (bool2 && !(bool1)) { // order of bools switched to take advantage of short circuit execution
         Serial.println("Backing up, Left Side blocked");
+        sum = backup(1);
         // TODO: Include code to move backwards and to the right
       }
       else {
         Serial.println("Spinning in place to get new heading");
-        // TODO: Include code to rotate in place
+        sum = spin(90);
       }
       moving = true;
     }
   }
+}
+
+// function to change the individual wheel speeds of the bot
+int drivewheels(int left, int right) {
+  return 0;
+}
+
+// function to back up the bot while turning into a direction based on the side
+// -1 is left, 0 is straight, and 1 is right
+int backup(int side) {
+  return 0;
+}
+
+
+// function to make the robot turn a set number of degrees, with + being clockwise and - being counterclockwise
+int spin(int amount) {
+  return 0;
 }
 /* Deprecated Sensor Code
 int checkSensor1() {
