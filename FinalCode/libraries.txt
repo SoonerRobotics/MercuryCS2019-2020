@@ -1,0 +1,8 @@
+A list of the libraries used in this project:
+- serial
+- numpy
+- cv2
+- imutils
+- flask
+- pygame
+- Bifrost HC SR04 Sensor Library
