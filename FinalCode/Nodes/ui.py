@@ -82,7 +82,7 @@ def main(server=True, local=False):
                             sensor_dict[data_key] = data_dict[data_key]
 
                 # Bad practice but lazy right now
-                except:
+                except Exception as e:
 
                     # Write connection status
                     with lock:

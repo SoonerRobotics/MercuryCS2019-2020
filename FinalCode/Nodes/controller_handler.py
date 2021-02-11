@@ -82,7 +82,7 @@ def main(local=False):
                     self.request.sendall(send_msg)
 
                 # Bad practice but lazy right now
-                except:
+                except Exception as e:
 
                     c_status = "Disconnected"
                     logger.info(c_status)
