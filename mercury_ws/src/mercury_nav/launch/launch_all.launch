@@ -1,0 +1,12 @@
+<launch>
+
+     <include file="$(find mercury_serial)/launch/serial.launch"/>
+
+    <node pkg="mercury_nav" type="collision_avoidance.py" name="collision_avoidance" />
+
+    <node pkg="mercury_nav" type="udp_node.py" name="udp_node" />
+
+    <node pkg="mercury_nav" type="ui_transmitter_node.py" name="ui_transmitter_node" />
+
+</launch>
+

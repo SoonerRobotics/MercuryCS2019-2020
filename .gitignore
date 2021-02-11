@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+devel/
+build/
+=======
 **/*__pycache__
 Logging/*
 !Logging/.gitkeep
+>>>>>>> master

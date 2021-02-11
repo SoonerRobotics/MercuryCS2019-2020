@@ -45,8 +45,8 @@ void loop() {
     }
     
     // Set left and right motor speed based on controller stick values received
-    motorLeft.output(doc["leftStick"]);
-    motorRight.output(doc["rightStick"]);
+    motorLeft.output(doc["leftMotor"]);
+    motorRight.output(doc["rightMotor"]);
 
     // Send the JSON back over serial
     serializeJson(doc, Serial);
